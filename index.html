@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <!--code by Molly Felts Vallin-->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial scale=1.0" />
+    <!-- link to CSS stylesheet -->
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <!-- site title-->
+    <title>ohmyfood</title>
+  </head>
+
+  <body>
+    <header class="header">
+        <img class="logo--header" src="assets/images/ohmyfood.svg" alt="ohmyfood logo" />
+    </header>
+    
+    <main>    
+      <section class ="location">
+        <i class="location__icon location-dot"></i>
+        <span class="location__text">Paris, Belleville</span>
+      </section>
+      
+      <section class="hero">
+        <h1 class="hero__title">Réservez le menu qui vous convient</h1>
+        <p class="hero__title--sub">Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
+        <a class="hero__btn" href="#restaurants">Explorer nos restaurants</a>
+      </section>
+
+      <section class="howto">
+        <h1 class="howto__title">Fonctionnement</h1>
+        <ol class="howto__list">
+          <li class="howto__item">
+            <a href="#restaurants">
+            <i class="howto__icon mobile"></i>
+            <span class="howto__text">Choissisez un restaurant</span>
+            </a>  
+          </li>
+          <li class="howto__item">
+            <a href="#"><!-- empty placeholder link for future use-->
+            <i class="howto__icon list"></i>
+            <span class="howto__text">Composez votre menu</span>
+            </a>
+          </li>
+          <li class="howto__item">
+            <a href="#"><!-- empty placeholder link for future use once app is more developped -->
+            <i class="howto__icon store"></i>
+            <span class="howto__text">Dégustez au restaurant</span>
+            </a>
+          </li>
+        </ol>
+      </section>
+
+      <article id="restaurants">
+        <h1 class="restaurants__title">Restaurants</h1>
+        <div class="cards">
+          <a class="card" href="#"> <!-- placeholder link -->
+            <img class="card__photo" src="assets/images/restaurants/LaPaletteDuGout.jpg" alt="plat à La palette du goût"/>
+            <span class="card__overlay">Nouveau</span>
+            <div class="card__info">
+              <div class="card__text">
+                <h3 class="card__title">La palette du goût</h3>
+                <p class="card__title--sub">Ménilmontant</p>
+              </div>
+              <div class="card__icon btn--like"></div>
+            </div>
+          </a>
+          <a class="card" href="#"><!-- placeholder link -->
+            <img class="card__photo" src="assets/images/restaurants/LaNoteEnchantee.jpg" alt="plat à La note echantée"/>
+            <span class="card__overlay">Nouveau</span>
+            <div class="card__info">
+              <div class="card__text">
+                <h3 class="card__title">La note echantée</h3>
+                <p class="card__title--sub">Charonne</p>
+              </div>
+              <div class="card__icon btn--like"></div>
+            </div>
+          </a>
+          <a class="card" href="#"><!-- placeholder link -->
+            <img class="card__photo" src="assets/images/restaurants/ALaFrancaise.jpg" alt="plat à À la française"/>
+            <div class="card__info">
+              <div class="card__text">
+                <h3 class="card__title">À la française</h3>
+                <p class="card__title--sub">Cité Rouge</p>
+              </div>
+              <div class="card__icon btn--like"></div>
+            </div>
+          </a>
+          <a class="card" href="#"><!-- placeholder link -->
+            <img class="card__photo" src="assets/images/restaurants/LeDeliceDesSens.jpg" alt="plat à Le délice des sens"/>
+            <div class="card__info">
+              <div class="card__text">
+                <h3 class="card__title">Le délice des sens</h3>
+                <p class="card__title--sub">Folie-Méricourt</p>
+              </div>
+              <div class="card__icon btn--like"></div>
+            </div>
+          </a>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+      <img class="logo--footer" src="assets/images/ohmyfood.svg" alt="ohmyfood logo">
+      <ul class="footer__list">
+        <li class="footer__link--icon">
+          <a href="#"><i class="footer__icon cutlery"></i>Proposer un restaurant</i></a>
+        </li>
+        <li class="footer__link--icon">
+          <a href="#"><i class="footer__icon handshake"></i>Proposer un restaurant</i></a>
+        </li>
+        <li class="footer__link">
+          <a href="#">Mentions légales</a>
+        </li>
+        <li class="footer__link">
+          <a href="mailto:contact@ohmyfood.fr">Contact</a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>
