@@ -1,0 +1,21 @@
+/* colors */
+
+$color-primary: #9356dc;
+$color-secondary: #ff79da;
+$color-tertiary: #99e2d0;
+$color-gradient: linear-gradient($color-secondary, $color-primary);
+$color-text: #000;
+$color-light: #fff;
+$color-medium: darken($color-light, 10%);
+$color-dark: #353535;
+
+/* fonts */
+$font-main: "Roboto", sans-serif;
+$font-accent: "Shrikhand", cursive;
+$fontsize: (
+	xl: 1.4em,
+	lg: 1.2em,
+	reg: 1em,
+	sm: 0.9em,
+	xsm: 0.8em,
+);

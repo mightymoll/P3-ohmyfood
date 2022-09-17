@@ -1,0 +1,40 @@
+/* VENDOR - Default fall-backs and external files */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&family=Shrikhand&display=swap");
+
+/* SCSS Files */
+@import "base";
+@import "components";
+@import "layout";
+
+body {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-size: get-fontsize(reg);
+
+	a {
+		text-decoration: none;
+		color: $color-light;
+		font-family: $font-main;
+		font-size: get-fontsize(xsm);
+		&:hover {
+			color: $color-primary;
+		}
+	}
+
+	h1 {
+		font-family: $font-accent;
+		font-size: get-fontsize(xl);
+	}
+
+	h2 {
+		font-family: $font-main;
+		font-size: get-fontsize(lg);
+		font-weight: 500;
+	}
+}
+
+header {
+	@extend %centered;
+	padding: 0 4%;
+}

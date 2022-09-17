@@ -1,1 +1,47 @@
-/*# sourceMappingURL=style.css.map */
+/* VENDOR - Default fall-backs and external files */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&family=Shrikhand&display=swap");
+/* SCSS Files */
+/* colors */
+/* fonts */
+/*._icon::before {
+	content: map-get
+	font-size: 1.2em;
+	color: #000;
+}*/
+/* general styles */
+header {
+  width: 100%;
+  text-align: center;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: get-fontsize(reg);
+}
+body a {
+  text-decoration: none;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: get-fontsize(xsm);
+}
+body a:hover {
+  color: #9356dc;
+}
+body h1 {
+  font-family: "Shrikhand", cursive;
+  font-size: get-fontsize(xl);
+}
+body h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: get-fontsize(lg);
+  font-weight: 500;
+}
+
+header {
+  padding: 0 4%;
+}
