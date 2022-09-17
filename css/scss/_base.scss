@@ -3,10 +3,10 @@
 $color-primary: #9356dc;
 $color-secondary: #ff79da;
 $color-tertiary: #99e2d0;
-$color-gradient: linear-gradient($color-secondary, $color-primary);
+$color-gradient: linear-gradient(#ff79da, #9356dc);
 $color-text: #000;
 $color-light: #fff;
-$color-medium: darken($color-light, 10%);
+$color-medium: #eaeaea;
 $color-dark: #353535;
 
 /* fonts */
@@ -16,6 +16,6 @@ $fontsize: (
 	xl: 1.4em,
 	lg: 1.2em,
 	reg: 1em,
-	sm: 0.9em,
-	xsm: 0.8em,
+	sm: 0.8em,
+	xs: 0.7em,
 );

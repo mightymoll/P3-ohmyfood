@@ -2,24 +2,32 @@
 
 $full-width: 100%;
 $padding-side: 0 4%;
+$padding-around: 4%;
+$margin-std: 4%;
+$margin-big: 6%;
+$margin-half: 2%;
 
 @mixin width($n: $full-width) {
 	width: $n;
 }
 
 %centered {
-	width: $full-width;
+	padding: $padding-side;
 	text-align: center;
-	align-content: center;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 %flex-column {
-	@include width;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	padding: $padding-side;
+}
+
+%flex-row {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
 }

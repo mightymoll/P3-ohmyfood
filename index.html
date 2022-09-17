@@ -12,24 +12,25 @@
   </head>
 
   <body>
-    <header class="header">
-        <img class="logo--header" src="assets/images/ohmyfood.svg" alt="ohmyfood logo" />
+    <header>
+        <img class="header-logo" src="assets/images/ohmyfood.svg" alt="ohmyfood logo" />
+        <div class="location">
+          <i class="icon location-dot"></i>
+          <p class="location-text">Paris, Belleville</p>
+        </div>
     </header>
     
     <main>    
-      <section class ="location">
-        <i class="location__icon location-dot"></i>
-        <span class="location__text">Paris, Belleville</span>
-      </section>
-      
       <section class="hero">
-        <h1 class="hero__title">Réservez le menu qui vous convient</h1>
-        <p class="hero__title--sub">Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
-        <a class="hero__btn" href="#restaurants">Explorer nos restaurants</a>
+        <div class="hero-text">
+          <h2>Réservez le menu qui vous convient</h2>
+          <p>Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
+        </div>
+        <a class="hero-btn" href="#restaurants">Explorer nos restaurants</a>
       </section>
 
       <section class="howto">
-        <h1 class="howto__title">Fonctionnement</h1>
+        <h2 class="howto__title">Fonctionnement</h2>
         <ol class="howto__list">
           <li class="howto__item">
             <a href="#restaurants">
@@ -53,7 +54,7 @@
       </section>
 
       <article id="restaurants">
-        <h1 class="restaurants__title">Restaurants</h1>
+        <h2 class="restaurants__title">Restaurants</h2>
         <div class="cards">
           <a class="card" href="#"> <!-- placeholder link -->
             <img class="card__photo" src="assets/images/restaurants/LaPaletteDuGout.jpg" alt="plat à La palette du goût"/>
@@ -118,5 +119,6 @@
         </li>
       </ul>
     </footer>
+    <script src="https://kit.fontawesome.com/cd93d31cbd.js" crossorigin="anonymous"></script>
   </body>
 </html>
