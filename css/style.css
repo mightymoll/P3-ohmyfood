@@ -2,105 +2,115 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Shrikhand&display=swap");
 /* SCSS Files */
 /* general styles */
-.howto, .hero {
-  padding: 0 4%;
+.howto {
+  padding: 0 5%;
   margin-left: auto;
   margin-right: auto;
 }
 
-.howto__list, .hero {
+.howto-list, .hero .container, .logo-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
 
+.list-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 /* colors */
+/* shadows, ombres */
 /* fonts */
 /* general icon styling for proper display */
-.list-item a .list-icon .store::before, .list-item a .list-icon::before, .list-item a .list-icon .mobile::before {
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  display: inline-block;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-}
-
-.list-item a .list-icon {
-  font-size: get-fontsize("lg");
-  color: #636363;
-}
-.list-item a .list-icon:hover {
-  color: #9356dc;
-}
-
-.hero-btn {
+.hero .container .hero-btn {
   height: 40px;
-  background: linear-gradient(#ff79da, #9356dc);
-  padding: 5px 15px;
+  background: linear-gradient(175deg, #ff79da, #9356dc);
+  padding: 0.5em 1.5em;
   border-radius: 40px;
-  font-weight: 500;
-  font-size: 1em;
+  font: 500 1em "Roboto";
   line-height: 40px;
+  box-shadow: 0px 5px 10px rgba(30, 29, 29, 0.15);
+}
+
+.list-item {
+  width: 97.5%;
+  height: 60px;
+  background: #f6f6f6;
+  border-radius: 15px;
+  margin: 0;
+  padding: 0;
+  align-self: flex-end;
+  box-shadow: 0px 5px 10px rgba(30, 29, 29, 0.15);
 }
 
 /* colors */
+/* shadows, ombres */
 /* fonts */
 body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-size: 1em;
+  font-size: 16px;
   font-family: "Roboto", sans-serif;
-  font-weight: 300;
+  font-weight: 500;
+}
+
+a,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
 }
 
 a {
   text-decoration: none;
   color: #fff;
-  font-size: 0.7em;
-  margin: 0;
 }
 
 h1 {
-  font-family: "Shrikhand", cursive;
-  font-size: 1.7em;
+  font: 700 1.5em "Roboto";
 }
 
 h2 {
-  font-size: 1.5em;
-  font-weight: 700;
+  font: 700 1.125em "Roboto";
 }
 
-p {
-  margin: 0;
-  font-size: 1em;
+h3 {
+  font: 300 1.0625em "Roboto";
 }
 
-header {
-  background-color: #fff;
+/* start of page content */
+.logo-container {
+  height: 4em;
+  justify-content: space-around;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(30, 29, 29, 0.15);
+  padding-top: 2.5%;
+  position: relative;
+}
+.logo-container .header-logo {
+  width: 160px;
+  display: block;
+  position: absolute;
+}
+
+.location {
+  height: 3em;
+  background: #eaeaea;
+  color: #353535;
   text-align: center;
 }
-header .header-logo {
-  width: 160px;
-  margin: 4% 4% 2% 4%;
-}
-header .location {
-  padding: 2% 0;
-  background-color: #eaeaea;
-  color: #353535;
-}
-header .location-dot::before {
-  content: "\f3c5";
+.location i {
   font-size: 1em;
   margin-right: 1%;
 }
-header .location-text {
+.location p {
   display: inline-block;
-  font-size: 0.8em;
-  font-weight: 500;
+  line-height: 3em;
 }
 
 main {
@@ -108,37 +118,50 @@ main {
 }
 
 .hero {
-  padding: 0 4%;
+  background: #f6f6f6;
+}
+.hero .container {
   text-align: center;
+  padding: 10% 5%;
 }
-.hero-text {
-  width: 285px;
-  margin: 4%;
+.hero .container h1 {
+  max-width: 250px;
+  margin-bottom: 5%;
 }
-.hero-btn {
-  margin-top: 4%;
+.hero .container p {
+  max-width: 310px;
+  font: 300 1.125em "Roboto";
+  margin-bottom: 10%;
+}
+.hero .container .hero-btn {
+  margin-bottom: 5%;
 }
 
-.howto__title {
-  margin-bottom: 10px;
+.howto {
+  padding: 15% 5%;
 }
-.howto__list {
-  gap: 10px;
-  counter-reset: section;
+.howto h1 {
+  margin-bottom: 5%;
+}
+.howto-list {
+  counter-reset: list-number;
+  gap: 30px;
+  padding: 0;
 }
 
 .list-item {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
+  gap: 5%;
+  z-index: 0;
 }
-.list-item .list-count {
-  counter-reset: list-number;
-  z-index: 1;
+.list-item i {
+  color: #7e7e7e;
+  font-size: 1.125em;
 }
-.list-item .list-count::before {
+.list-item i:hover {
+  color: #9356dc;
+}
+
+.list-item::before {
   counter-increment: list-number;
   content: counter(list-number);
   width: 25px;
@@ -147,38 +170,11 @@ main {
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 0.7em;
-  font-weight: 500;
+  font: 700 0.875em "Roboto";
   background: #9356dc;
   border-radius: 50%;
-}
-.list-item a {
-  width: 100%;
-  height: 60px;
-  background: #eaeaea;
-  border-radius: 15px;
-  margin-left: -15px;
-  z-index: 0;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-.list-item a .list-icon {
-  margin: 0 30px;
-}
-.list-item a .list-icon .mobile::before {
-  content: "/f3cd";
-}
-.list-item a .list-icon::before {
-  content: "/f03a";
-}
-.list-item a .list-icon .store::before {
-  content: "/f54e";
-}
-.list-item .list-text {
-  color: black;
-  font-size: 1.5em;
-  font-weight: 500;
+  margin-left: -2.5%;
+  z-index: 1;
 }
 
 /* to make viewing in the inspector easier > to change later */

@@ -6,25 +6,29 @@
 	font-weight: 900;
 	display: inline-block;
 	font-style: normal;
+
 	font-variant: normal;
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
 }
 
-%list-icon {
-	font-size: get-fontsize("lg");
-	color: #636363;
-	&:hover {
-		color: $color-primary;
-	}
-}
-
 %btnstyle {
 	height: 40px;
 	background: $color-gradient;
-	padding: 5px 15px;
+	padding: 0.5em 1.5em;
 	border-radius: 40px;
-	font-weight: 500;
-	font-size: map-get($fontsize, "reg");
+	font: map-get($textstyle, "button");
 	line-height: 40px;
+	box-shadow: $soft;
+}
+
+%listitem {
+	width: 97.5%;
+	height: 60px;
+	background: $color-light;
+	border-radius: 15px;
+	margin: 0;
+	padding: 0;
+	align-self: flex-end;
+	box-shadow: $soft;
 }

@@ -10,157 +10,147 @@ body {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	font-size: map-get($fontsize, "reg");
+	font-size: 16px;
 	font-family: $font-main;
-	font-weight: 300;
+	font-weight: 500;
+}
+
+a,
+h1,
+h2,
+h3,
+p {
+	margin: 0;
 }
 
 a {
 	text-decoration: none;
-	color: $color-light;
-	font-size: map-get($fontsize, "xs");
-	margin: 0;
+	color: $white;
 }
 
 h1 {
-	font-family: $font-accent;
-	font-size: map-get($fontsize, "xl");
+	font: map-get($textstyle, "h1");
 }
 
 h2 {
-	font-size: map-get($fontsize, "lg");
-	font-weight: 700;
+	font: map-get($textstyle, "h2");
 }
 
-p {
-	margin: 0;
-	font-size: map-get($fontsize, "reg");
+h3 {
+	font: map-get($textstyle, "h3");
 }
 
-header {
-	background-color: $color-light;
-	text-align: center;
+/* start of page content */
+.logo-container {
+	height: 4em;
+	@extend %flex-column;
+	justify-content: space-around;
+	background: $white;
+	box-shadow: $harsh;
+	padding-top: $half;
+	position: relative;
 
 	.header-logo {
 		width: 160px;
-		margin: 4% 4% 2% 4%;
+		display: block;
+		position: absolute;
+	}
+}
+
+.location {
+	height: 3em;
+	background: $color-medium;
+	color: $color-dark;
+	text-align: center;
+
+	i {
+		font-size: 1em;
+		margin-right: 1%;
 	}
 
-	.location {
-		padding: 2% 0;
-		background-color: $color-medium;
-		color: $color-dark;
-
-		&-dot::before {
-			content: "\f3c5";
-			font-size: map-get($fontsize, "reg");
-			margin-right: 1%;
-		}
-
-		&-text {
-			display: inline-block;
-			font-size: map-get($fontsize, "sm");
-			font-weight: 500;
-		}
+	p {
+		display: inline-block;
+		line-height: 3em;
 	}
 }
 
 main {
 	width: $full-width;
 }
+
 .hero {
-	@extend %flex-column;
-	@extend %centered;
-	padding: $padding-side;
-	text-align: center;
+	background: $color-light;
 
-	&-text {
-		width: 285px;
-		margin: $margin-std;
-	}
+	.container {
+		@extend %flex-column;
+		text-align: center;
+		padding: $size2x $size1x;
 
-	&-btn {
-		@extend %btnstyle;
-		margin-top: $margin-std;
+		h1 {
+			max-width: 250px;
+			margin-bottom: $size1x;
+		}
+
+		p {
+			max-width: 310px;
+			font: map-get($textstyle, "tagline");
+			margin-bottom: $size2x;
+		}
+
+		.hero-btn {
+			@extend %btnstyle;
+			margin-bottom: $size1x;
+		}
 	}
 }
 
 .howto {
 	@extend %centered;
+	padding: $size3x $size1x;
 
-	&__title {
-		margin-bottom: 10px;
+	h1 {
+		margin-bottom: $size1x;
 	}
 
-	&__list {
+	&-list {
 		@extend %flex-column;
+		counter-reset: list-number;
 		gap: $gap;
-		counter-reset: section;
+		padding: 0;
 	}
 }
 
 .list-item {
-	width: $full-width;
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
+	@extend %listitem;
+	@extend %flex-row;
+	gap: $size1x;
+	z-index: 0;
+
+	i {
+		color: $color-meddark;
+		font-size: 1.125em;
+
+		&:hover {
+			color: $color-primary;
+		}
+	}
+}
+
+.list-item::before {
+	counter-increment: list-number;
+	content: counter(list-number);
+
+	width: 25px;
+	height: 25px;
+	display: inline-flex;
 	align-items: center;
-
-	.list-count {
-		counter-reset: list-number;
-		z-index: 1;
-
-		&::before {
-			counter-increment: list-number;
-			content: counter(list-number);
-
-			width: 25px;
-			height: 25px;
-			display: inline-flex;
-			align-items: center;
-			justify-content: center;
-			color: white;
-			font-size: map-get($fontsize, "xs");
-			font-weight: 500;
-			background: $color-primary;
-			border-radius: 50%;
-		}
-	}
-
-	a {
-		width: 100%;
-		height: 60px;
-		background: $color-medium;
-		border-radius: 15px;
-		margin-left: -15px;
-		z-index: 0;
-		display: flex;
-		justify-content: flex-start;
-		align-items: center;
-
-		.list-icon {
-			@extend %list-icon;
-			margin: 0 30px;
-			.mobile::before {
-				@extend %icon;
-				content: "/f3cd";
-			}
-			&::before {
-				@extend %icon;
-				content: "/f03a";
-			}
-			.store::before {
-				@extend %icon;
-				content: "/f54e";
-			}
-		}
-	}
-
-	.list-text {
-		color: black;
-		font-size: map-get($fontsize, "lg");
-		font-weight: 500;
-	}
+	justify-content: center;
+	color: white;
+	font: map-get($textstyle, "listnum");
+	background: $color-primary;
+	border-radius: 50%;
+	margin-left: -$half;
+	z-index: 1;
 }
 
 /* to make viewing in the inspector easier > to change later */
