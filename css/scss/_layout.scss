@@ -6,6 +6,7 @@ $padding-around: 4%;
 $margin-std: 4%;
 $margin-big: 6%;
 $margin-half: 2%;
+$gap: 10px;
 
 @mixin width($n: $full-width) {
 	width: $n;
@@ -13,7 +14,6 @@ $margin-half: 2%;
 
 %centered {
 	padding: $padding-side;
-	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
 }

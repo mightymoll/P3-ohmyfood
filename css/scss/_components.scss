@@ -1,5 +1,7 @@
+@import "base";
+
 /* general icon styling for proper display */
-.icon::before {
+%icon {
 	font-family: "Font Awesome 6 Free";
 	font-weight: 900;
 	display: inline-block;
@@ -10,7 +12,7 @@
 }
 
 %list-icon {
-	font-size: get-fontsize(lg);
+	font-size: get-fontsize("lg");
 	color: #636363;
 	&:hover {
 		color: $color-primary;
@@ -18,11 +20,11 @@
 }
 
 %btnstyle {
-	height: 30px;
+	height: 40px;
 	background: $color-gradient;
 	padding: 5px 15px;
-	border-radius: 30px;
+	border-radius: 40px;
 	font-weight: 500;
-	font-size: get-fontsize(xs);
-	line-height: 30px;
+	font-size: map-get($fontsize, "reg");
+	line-height: 40px;
 }

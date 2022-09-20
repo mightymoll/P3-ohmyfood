@@ -2,15 +2,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Shrikhand&display=swap");
 
 /* SCSS Files */
-@import "base";
-@import "components";
 @import "layout";
+@import "components";
+@import "base";
 
 body {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	font-size: get-fontsize(reg);
+	font-size: map-get($fontsize, "reg");
 	font-family: $font-main;
 	font-weight: 300;
 }
@@ -18,22 +18,23 @@ body {
 a {
 	text-decoration: none;
 	color: $color-light;
-	font-size: get-fontsize(xs);
+	font-size: map-get($fontsize, "xs");
 	margin: 0;
 }
 
 h1 {
 	font-family: $font-accent;
-	font-size: get-fontsize(xl);
+	font-size: map-get($fontsize, "xl");
 }
 
 h2 {
-	font-size: get-fontsize(lg);
+	font-size: map-get($fontsize, "lg");
 	font-weight: 700;
 }
 
 p {
 	margin: 0;
+	font-size: map-get($fontsize, "reg");
 }
 
 header {
@@ -41,24 +42,24 @@ header {
 	text-align: center;
 
 	.header-logo {
-		height: 25px;
-		margin: 5% 5% 3% 5%;
+		width: 160px;
+		margin: 4% 4% 2% 4%;
 	}
 
 	.location {
-		padding: 4% 0;
+		padding: 2% 0;
 		background-color: $color-medium;
 		color: $color-dark;
 
 		&-dot::before {
 			content: "\f3c5";
-			font-size: get-fontsize(reg);
+			font-size: map-get($fontsize, "reg");
 			margin-right: 1%;
 		}
 
 		&-text {
 			display: inline-block;
-			font-size: get-fontsize(reg);
+			font-size: map-get($fontsize, "sm");
 			font-weight: 500;
 		}
 	}
@@ -71,15 +72,94 @@ main {
 	@extend %flex-column;
 	@extend %centered;
 	padding: $padding-side;
+	text-align: center;
 
 	&-text {
-		max-width: 80%;
+		width: 285px;
 		margin: $margin-std;
 	}
 
 	&-btn {
 		@extend %btnstyle;
 		margin-top: $margin-std;
+	}
+}
+
+.howto {
+	@extend %centered;
+
+	&__title {
+		margin-bottom: 10px;
+	}
+
+	&__list {
+		@extend %flex-column;
+		gap: $gap;
+		counter-reset: section;
+	}
+}
+
+.list-item {
+	width: $full-width;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+
+	.list-count {
+		counter-reset: list-number;
+		z-index: 1;
+
+		&::before {
+			counter-increment: list-number;
+			content: counter(list-number);
+
+			width: 25px;
+			height: 25px;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			color: white;
+			font-size: map-get($fontsize, "xs");
+			font-weight: 500;
+			background: $color-primary;
+			border-radius: 50%;
+		}
+	}
+
+	a {
+		width: 100%;
+		height: 60px;
+		background: $color-medium;
+		border-radius: 15px;
+		margin-left: -15px;
+		z-index: 0;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+
+		.list-icon {
+			@extend %list-icon;
+			margin: 0 30px;
+			.mobile::before {
+				@extend %icon;
+				content: "/f3cd";
+			}
+			&::before {
+				@extend %icon;
+				content: "/f03a";
+			}
+			.store::before {
+				@extend %icon;
+				content: "/f54e";
+			}
+		}
+	}
+
+	.list-text {
+		color: black;
+		font-size: map-get($fontsize, "lg");
+		font-weight: 500;
 	}
 }
 

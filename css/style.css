@@ -1,10 +1,24 @@
 /* VENDOR - Default fall-backs and external files */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Shrikhand&display=swap");
 /* SCSS Files */
+/* general styles */
+.howto, .hero {
+  padding: 0 4%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.howto__list, .hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /* colors */
 /* fonts */
 /* general icon styling for proper display */
-.icon::before {
+.list-item a .list-icon .store::before, .list-item a .list-icon::before, .list-item a .list-icon .mobile::before {
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
   display: inline-block;
@@ -14,36 +28,31 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.list-item a .list-icon {
+  font-size: get-fontsize("lg");
+  color: #636363;
+}
+.list-item a .list-icon:hover {
+  color: #9356dc;
+}
+
 .hero-btn {
-  height: 30px;
+  height: 40px;
   background: linear-gradient(#ff79da, #9356dc);
   padding: 5px 15px;
-  border-radius: 30px;
+  border-radius: 40px;
   font-weight: 500;
-  font-size: get-fontsize(xs);
-  line-height: 30px;
+  font-size: 1em;
+  line-height: 40px;
 }
 
-/* general styles */
-.hero {
-  padding: 0 4%;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
+/* colors */
+/* fonts */
 body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-size: get-fontsize(reg);
+  font-size: 1em;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
 }
@@ -51,22 +60,23 @@ body {
 a {
   text-decoration: none;
   color: #fff;
-  font-size: get-fontsize(xs);
+  font-size: 0.7em;
   margin: 0;
 }
 
 h1 {
   font-family: "Shrikhand", cursive;
-  font-size: get-fontsize(xl);
+  font-size: 1.7em;
 }
 
 h2 {
-  font-size: get-fontsize(lg);
+  font-size: 1.5em;
   font-weight: 700;
 }
 
 p {
   margin: 0;
+  font-size: 1em;
 }
 
 header {
@@ -74,22 +84,22 @@ header {
   text-align: center;
 }
 header .header-logo {
-  height: 25px;
-  margin: 5% 5% 3% 5%;
+  width: 160px;
+  margin: 4% 4% 2% 4%;
 }
 header .location {
-  padding: 4% 0;
+  padding: 2% 0;
   background-color: #eaeaea;
   color: #353535;
 }
 header .location-dot::before {
   content: "\f3c5";
-  font-size: get-fontsize(reg);
+  font-size: 1em;
   margin-right: 1%;
 }
 header .location-text {
   display: inline-block;
-  font-size: get-fontsize(reg);
+  font-size: 0.8em;
   font-weight: 500;
 }
 
@@ -99,13 +109,76 @@ main {
 
 .hero {
   padding: 0 4%;
+  text-align: center;
 }
 .hero-text {
-  max-width: 80%;
+  width: 285px;
   margin: 4%;
 }
 .hero-btn {
   margin-top: 4%;
+}
+
+.howto__title {
+  margin-bottom: 10px;
+}
+.howto__list {
+  gap: 10px;
+  counter-reset: section;
+}
+
+.list-item {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.list-item .list-count {
+  counter-reset: list-number;
+  z-index: 1;
+}
+.list-item .list-count::before {
+  counter-increment: list-number;
+  content: counter(list-number);
+  width: 25px;
+  height: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.7em;
+  font-weight: 500;
+  background: #9356dc;
+  border-radius: 50%;
+}
+.list-item a {
+  width: 100%;
+  height: 60px;
+  background: #eaeaea;
+  border-radius: 15px;
+  margin-left: -15px;
+  z-index: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.list-item a .list-icon {
+  margin: 0 30px;
+}
+.list-item a .list-icon .mobile::before {
+  content: "/f3cd";
+}
+.list-item a .list-icon::before {
+  content: "/f03a";
+}
+.list-item a .list-icon .store::before {
+  content: "/f54e";
+}
+.list-item .list-text {
+  color: black;
+  font-size: 1.5em;
+  font-weight: 500;
 }
 
 /* to make viewing in the inspector easier > to change later */
