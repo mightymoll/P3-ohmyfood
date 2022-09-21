@@ -1,7 +1,18 @@
 /* VENDOR - Default fall-backs and external files */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Shrikhand&display=swap");
+@font-face {
+	font-family: "icon-worksregular";
+	src: url("../fonts/icon-works/icon-works-webfont.eot");
+	src: url("../fonts/icon-works/icon-works-webfont.eot") format("embedded-opentype"),
+		url("../fonts/icon-works/icon-works-webfont.woff") format("woff"),
+		url("../fonts/icon-works/icon-works-webfont.ttf") format("truetype"),
+		url("../fonts/icon-works/icon-works-webfont.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
 
 /* SCSS Files */
+
 @import "layout";
 @import "components";
 @import "base";
@@ -30,6 +41,7 @@ a {
 
 h1 {
 	font: map-get($textstyle, "h1");
+	margin-bottom: $half;
 }
 
 h2 {
@@ -49,7 +61,7 @@ h3 {
 	padding: 7.5% 0 $size1x;
 
 	.header-logo {
-		width: 160px;
+		width: 40%;
 		display: block;
 		margin: auto;
 	}
@@ -64,7 +76,8 @@ h3 {
 
 	i {
 		font-size: 1em;
-		margin-right: $half;
+		margin-right: 15px;
+		margin-left: -$half;
 	}
 }
 
@@ -82,13 +95,12 @@ main {
 
 		h1 {
 			max-width: 250px;
-			margin-bottom: $size1x;
 		}
 
 		p {
-			max-width: 310px;
+			max-width: 350px;
 			font: map-get($textstyle, "tagline");
-			margin-bottom: $size2x;
+			margin: $half 0 $size2x 0;
 		}
 
 		.hero-btn {
@@ -99,16 +111,10 @@ main {
 }
 
 .howto {
-	height: max-content;
-	padding: $padding-side;
-	margin: $size3x 0;
-
-	h1 {
-		margin-bottom: $half;
-	}
+	padding: $size3x $size1x;
 
 	&-list {
-		flex: 1;
+		flex: 1 0 100%;
 		@include flexbox(row, flex-end, space-between);
 		flex-wrap: wrap;
 		counter-reset: list-number;
@@ -117,8 +123,8 @@ main {
 
 .list-item {
 	@extend %listitem;
-	@include flexbox(row, flex-start, center, 5%);
-	margin: $half 0;
+	@include flexbox(row, flex-start, center, 15px);
+	line-height: 2em;
 
 	.fa-solid {
 		width: 1.3em;
@@ -127,12 +133,12 @@ main {
 		font-size: 1.2em;
 
 		&.fa-store {
-			color: $color-primary !important;
+			color: $color-primary;
 		}
 	}
 
 	&.item3 {
-		background: $color-clair !important;
+		background: $color-clair;
 	}
 
 	&::before {
@@ -151,7 +157,110 @@ main {
 	}
 }
 
-/* to make viewing in the inspector easier > to change later */
-.card__photo {
-	max-width: 10%;
+#restaurants {
+	height: max-content;
+	background: $color-light;
+	padding: $size3x $size1x;
+
+	.cards {
+		flex: 1;
+		@include flexbox(row, flex-end, space-between);
+		flex-wrap: wrap;
+	}
+}
+
+.card {
+	@extend %card;
+	position: relative;
+}
+
+.resto {
+	height: 100%;
+	display: block;
+	@include flexbox(column, flex-start);
+	position: relative;
+
+	.photo-tag {
+		position: absolute;
+		padding: 5px 12px;
+		background: $color-tertiary;
+		color: $color-tert-dk;
+		border-radius: 2px;
+		top: $size1x;
+		right: $size1x;
+		font: map-get($textstyle, "phototag");
+		z-index: 1;
+	}
+
+	&__photo {
+		width: 100%;
+		height: 70%;
+	}
+
+	img {
+		max-height: 100%;
+		object-fit: cover;
+		border-top-left-radius: $corner-rad;
+		border-top-right-radius: $corner-rad;
+		object-position: 50% 60%;
+		z-index: 0;
+	}
+
+	&__footer {
+		padding: 15px;
+		height: 100%;
+		color: $black;
+		@include flexbox(column, space-between);
+	}
+}
+
+.like-btn {
+	@extend %heart-pos;
+	position: relative;
+
+	.heart {
+		@extend %heart-pos;
+
+		&.empty {
+			@extend %heart-empty;
+			transition: color 0.2s ease-in-out;
+		}
+
+		&.full {
+			@extend %heart-full;
+			opacity: 0;
+			background-clip: text;
+			transition: opacity 0.3s ease-in-out;
+
+			&:hover {
+				opacity: 100%;
+			}
+		}
+	}
+}
+
+footer {
+	height: max-content;
+	background: $color-dark;
+	padding: $size1x $size1x $size2x;
+	margin: 0;
+
+	img {
+		filter: invert(100%);
+		width: 30%;
+		margin-bottom: $size1x;
+	}
+
+	ul.footer__list {
+		list-style: none;
+		line-height: 1.75em;
+		margin: 0;
+		padding: 0;
+
+		.link i {
+			width: 20px;
+			font-size: 0.9em;
+			margin-right: 5px;
+		}
+	}
 }

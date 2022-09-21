@@ -3,6 +3,7 @@ $color-primary: #9356dc;
 $color-clair: lighten(#9356dc, 35%);
 $color-secondary: #ff79da;
 $color-tertiary: #99e2d0;
+$color-tert-dk: #008766;
 $color-gradient: linear-gradient(175deg, #ff79da, #9356dc);
 $black: #000;
 $white: #fff;
@@ -13,17 +14,19 @@ $color-dark: #353535;
 
 /* shadows, ombres */
 $harsh: 0 2px 5px rgba(30, 29, 29, 0.15);
-$soft: 2px 5px 10px rgba(30, 29, 29, 0.2);
+$soft: 2px 3px 10px rgba(30, 29, 29, 0.15);
 
 /* fonts */
 $font-main: "Roboto", sans-serif;
 $font-accent: "Shrikhand", cursive;
+$font-icon: "icon-worksregular";
 
 $textstyle: (
 	h1: 700 1.5em "Roboto",
 	h2: 700 1.125em "Roboto",
 	h3: 300 1.0625em "Roboto",
-	tagline: 300 1.125em "Roboto",
+	tagline: 300 1em "Roboto",
 	button: 500 1em "Roboto",
 	listnum: 700 0.875em "Roboto",
+	phototag: 500 0.875em "Roboto",
 );
