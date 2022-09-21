@@ -1,5 +1,6 @@
 /* colors */
 $color-primary: #9356dc;
+$color-clair: lighten(#9356dc, 35%);
 $color-secondary: #ff79da;
 $color-tertiary: #99e2d0;
 $color-gradient: linear-gradient(175deg, #ff79da, #9356dc);
@@ -12,7 +13,7 @@ $color-dark: #353535;
 
 /* shadows, ombres */
 $harsh: 0 2px 5px rgba(30, 29, 29, 0.15);
-$soft: 0px 5px 10px rgba(30, 29, 29, 0.15);
+$soft: 2px 5px 10px rgba(30, 29, 29, 0.2);
 
 /* fonts */
 $font-main: "Roboto", sans-serif;

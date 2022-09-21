@@ -42,18 +42,16 @@ h3 {
 
 /* start of page content */
 .logo-container {
-	height: 4em;
-	@extend %flex-column;
-	justify-content: space-around;
+	height: content;
 	background: $white;
 	box-shadow: $harsh;
-	padding-top: $half;
 	position: relative;
+	padding: 7.5% 0 $size1x;
 
 	.header-logo {
 		width: 160px;
 		display: block;
-		position: absolute;
+		margin: auto;
 	}
 }
 
@@ -62,15 +60,11 @@ h3 {
 	background: $color-medium;
 	color: $color-dark;
 	text-align: center;
+	line-height: 3em;
 
 	i {
 		font-size: 1em;
-		margin-right: 1%;
-	}
-
-	p {
-		display: inline-block;
-		line-height: 3em;
+		margin-right: $half;
 	}
 }
 
@@ -82,7 +76,7 @@ main {
 	background: $color-light;
 
 	.container {
-		@extend %flex-column;
+		@include flexbox($flex-direction: column, $justify-content: space-between, $align-items: center);
 		text-align: center;
 		padding: $size2x $size1x;
 
@@ -105,52 +99,56 @@ main {
 }
 
 .howto {
-	@extend %centered;
-	padding: $size3x $size1x;
+	height: max-content;
+	padding: $padding-side;
+	margin: $size3x 0;
 
 	h1 {
-		margin-bottom: $size1x;
+		margin-bottom: $half;
 	}
 
 	&-list {
-		@extend %flex-column;
+		flex: 1;
+		@include flexbox(row, flex-end, space-between);
+		flex-wrap: wrap;
 		counter-reset: list-number;
-		gap: $gap;
-		padding: 0;
 	}
 }
 
 .list-item {
 	@extend %listitem;
-	@extend %flex-row;
-	gap: $size1x;
-	z-index: 0;
+	@include flexbox(row, flex-start, center, 5%);
+	margin: $half 0;
 
-	i {
+	.fa-solid {
+		width: 1.3em;
+		text-align: center;
 		color: $color-meddark;
-		font-size: 1.125em;
+		font-size: 1.2em;
 
-		&:hover {
-			color: $color-primary;
+		&.fa-store {
+			color: $color-primary !important;
 		}
 	}
-}
 
-.list-item::before {
-	counter-increment: list-number;
-	content: counter(list-number);
+	&.item3 {
+		background: $color-clair !important;
+	}
 
-	width: 25px;
-	height: 25px;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	color: white;
-	font: map-get($textstyle, "listnum");
-	background: $color-primary;
-	border-radius: 50%;
-	margin-left: -$half;
-	z-index: 1;
+	&::before {
+		counter-increment: list-number;
+		content: counter(list-number);
+		width: 24px;
+		height: 24px;
+		display: inline-flex;
+		justify-content: center;
+		color: white;
+		font: map-get($textstyle, "listnum");
+		line-height: 24px;
+		background: $color-primary;
+		border-radius: 50%;
+		margin-left: -12px;
+	}
 }
 
 /* to make viewing in the inspector easier > to change later */

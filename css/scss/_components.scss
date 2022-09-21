@@ -23,12 +23,10 @@
 }
 
 %listitem {
-	width: 97.5%;
+	width: calc(100% - 12px);
 	height: 60px;
-	background: $color-light;
+	background-color: $color-light;
 	border-radius: 15px;
-	margin: 0;
-	padding: 0;
 	align-self: flex-end;
 	box-shadow: $soft;
 }

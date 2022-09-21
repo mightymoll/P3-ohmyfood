@@ -18,15 +18,25 @@ $gap: 30px;
 	margin-right: auto;
 }
 
-%flex-column {
+@mixin flexbox($flex-direction: false, $justify-content: false, $align-items: false, $gap: false, $flex: false) {
 	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-}
 
-%flex-row {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
+	@if $flex-direction != false {
+		flex-direction: $flex-direction;
+	}
+
+	@if $justify-content != false {
+		justify-content: $justify-content;
+	}
+
+	@if $align-items != false {
+		align-items: $align-items;
+	}
+	@if $gap != false {
+		gap: $gap;
+	}
+
+	@if $flex != false {
+		flex: $flex;
+	}
 }

@@ -1,27 +1,7 @@
 /* VENDOR - Default fall-backs and external files */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Shrikhand&display=swap");
 /* SCSS Files */
-/* general styles */
-.howto {
-  padding: 0 5%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.howto-list, .hero .container, .logo-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.list-item {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-/* colors */
+/* general styles */ /* colors */
 /* shadows, ombres */
 /* fonts */
 /* general icon styling for proper display */
@@ -32,18 +12,16 @@
   border-radius: 40px;
   font: 500 1em "Roboto";
   line-height: 40px;
-  box-shadow: 0px 5px 10px rgba(30, 29, 29, 0.15);
+  box-shadow: 2px 5px 10px rgba(30, 29, 29, 0.2);
 }
 
 .list-item {
-  width: 97.5%;
+  width: calc(100% - 12px);
   height: 60px;
-  background: #f6f6f6;
+  background-color: #f6f6f6;
   border-radius: 15px;
-  margin: 0;
-  padding: 0;
   align-self: flex-end;
-  box-shadow: 0px 5px 10px rgba(30, 29, 29, 0.15);
+  box-shadow: 2px 5px 10px rgba(30, 29, 29, 0.2);
 }
 
 /* colors */
@@ -85,17 +63,16 @@ h3 {
 
 /* start of page content */
 .logo-container {
-  height: 4em;
-  justify-content: space-around;
+  height: content;
   background: #fff;
   box-shadow: 0 2px 5px rgba(30, 29, 29, 0.15);
-  padding-top: 2.5%;
   position: relative;
+  padding: 7.5% 0 5%;
 }
 .logo-container .header-logo {
   width: 160px;
   display: block;
-  position: absolute;
+  margin: auto;
 }
 
 .location {
@@ -103,14 +80,11 @@ h3 {
   background: #eaeaea;
   color: #353535;
   text-align: center;
+  line-height: 3em;
 }
 .location i {
   font-size: 1em;
-  margin-right: 1%;
-}
-.location p {
-  display: inline-block;
-  line-height: 3em;
+  margin-right: 2.5%;
 }
 
 main {
@@ -121,6 +95,10 @@ main {
   background: #f6f6f6;
 }
 .hero .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   text-align: center;
   padding: 10% 5%;
 }
@@ -138,43 +116,58 @@ main {
 }
 
 .howto {
-  padding: 15% 5%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 0 5%;
+  margin: 15% 0;
 }
 .howto h1 {
-  margin-bottom: 5%;
+  margin-bottom: 2.5%;
 }
 .howto-list {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: space-between;
+  flex-wrap: wrap;
   counter-reset: list-number;
-  gap: 30px;
-  padding: 0;
 }
 
 .list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
   gap: 5%;
-  z-index: 0;
+  margin: 2.5% 0;
 }
-.list-item i {
+.list-item .fa-solid {
+  width: 1.3em;
+  text-align: center;
   color: #7e7e7e;
-  font-size: 1.125em;
+  font-size: 1.2em;
 }
-.list-item i:hover {
-  color: #9356dc;
+.list-item .fa-solid.fa-store {
+  color: #9356dc !important;
 }
-
+.list-item.item3 {
+  background: #f2eafb !important;
+}
 .list-item::before {
   counter-increment: list-number;
   content: counter(list-number);
-  width: 25px;
-  height: 25px;
+  width: 24px;
+  height: 24px;
   display: inline-flex;
-  align-items: center;
   justify-content: center;
   color: white;
   font: 700 0.875em "Roboto";
+  line-height: 24px;
   background: #9356dc;
   border-radius: 50%;
-  margin-left: -2.5%;
-  z-index: 1;
+  margin-left: -12px;
 }
 
 /* to make viewing in the inspector easier > to change later */
