@@ -41,23 +41,10 @@
 	box-shadow: $soft;
 }
 
-/* icons for 'like' button */
-%heart-empty {
-	@extend %icon;
-	color: transparent;
-	-webkit-text-stroke: 1.5px black;
-}
-
-%heart-full {
-	@extend %icon;
-	color: $color-gradient;
-	-webkit-text-fill-color: linear-gradient(175deg, #ff79da, #9356dc);
-}
-
+/* positioning for 'like' button */
 %heart-pos {
-	font-size: 1.3em;
 	cursor: pointer;
 	position: absolute;
-	bottom: 8%;
-	right: 4%;
+	bottom: $size2x;
+	right: 7.5%;
 }
