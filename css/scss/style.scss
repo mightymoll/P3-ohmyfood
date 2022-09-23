@@ -26,7 +26,7 @@ p {
 
 a {
 	text-decoration: none;
-	color: $white;
+	color: $color-base;
 }
 
 h1 {
@@ -46,7 +46,7 @@ h3 {
 .header-container {
 	height: 100%;
 	@include flexbox(center, center);
-	background: $white;
+	background: $color-base;
 	position: relative;
 	box-shadow: $harsh;
 	padding: $size1x;
@@ -63,15 +63,15 @@ h3 {
 		.nav-home {
 			@extend %icon;
 			font-size: 1.5em;
-			color: $color-meddark;
+			color: $base-med;
 		}
 	}
 }
 
 .location {
 	height: 3em;
-	background: $color-medium;
-	color: $color-dark;
+	background: $base-light;
+	color: $base-dark;
 	text-align: center;
 	line-height: 3em;
 
@@ -87,7 +87,7 @@ main {
 }
 
 .hero {
-	background: $color-light;
+	background: $base-xlight;
 
 	.container {
 		@include flexbox($flex-direction: column, $justify-content: space-between, $align-items: center);
@@ -130,7 +130,7 @@ main {
 	.fa-solid {
 		width: 1.3em;
 		text-align: center;
-		color: $color-meddark;
+		color: $base-med;
 		font-size: 1.2em;
 
 		&.fa-store {
@@ -160,7 +160,7 @@ main {
 
 #restaurants {
 	height: max-content;
-	background: $color-light;
+	background: $base-xlight;
 	padding: $size3x $size1x;
 
 	.cards {
@@ -210,44 +210,87 @@ main {
 	&__footer {
 		padding: 15px;
 		height: 75px;
-		color: $black;
+		color: #000;
 		@include flexbox(column, space-between);
 		position: relative;
 	}
 }
 
 .like-btn {
-	svg#empty {
-		@extend %heart-pos;
-		width: 24px;
-		transition: opacity 0.2s ease-out;
-		stroke: black;
-		stroke-width: 1px;
-		z-index: 0;
+	display: block;
+	position: relative;
 
-		&:hover {
-			opacity: 0%;
-		}
+	.heart {
+		@extend %heart-pos;
+		@extend %icon;
+		line-height: $heart-dim;
+		text-align: center;
+		display: grid;
+		grid-template-columns: $heart-dim;
+		grid-template-rows: $heart-dim;
+	}
+	.fa-heart {
+		display: flex;
 	}
 
-	svg#full {
-		@extend %heart-pos;
-		width: 26px;
-		opacity: 0;
-		fill: $white;
-		transition: opacity 0.4s ease-in-out;
-		z-index: 2;
+	i {
+		margin: auto;
+		line-height: $heart-dim;
+	}
 
-		&:hover {
-			opacity: 100%;
-			background-image: linear-gradient(175deg, #ff79da, #9356dc) !important;
-		}
+	.far {
+		grid-area: 1 / 1 / 2 / 2;
+		font-size: 28px;
+		color: #000;
+		opacity: 1;
+		transition: opacity 0.3s ease-out;
+	}
+
+	.fas {
+		grid-area: 1 / 1/ 2 / 2;
+		font-size: 30px;
+		background: $gradient-inverse;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		opacity: 0;
+		transition-delay: 0.1s;
+		transition: all 0.5s ease-in-out;
+	}
+
+	&:hover .fas {
+		opacity: 1;
+		font-size: 32px;
+		line-height: 32px;
+	}
+
+	&:focus .fas {
+		opacity: 1;
+	}
+
+	&:hover .far,
+	&:focus .far {
+		opacity: 0;
 	}
 }
 
+/*
+	.heart {
+		@extend %icon;
+		font-size: 25px;
+		color: $color-base;
+		/* text shadow generated with: http://owumaro.github.io/text-stroke-generator/ 
+		text-shadow: rgb(0, 0, 0) 2px 0px 0px, rgb(0, 0, 0) 1.75517px 0.958851px 0px, rgb(0, 0, 0) 1.0806px 1.68294px 0px,
+			rgb(0, 0, 0) 0.141474px 1.99499px 0px, rgb(0, 0, 0) -0.832294px 1.81859px 0px, rgb(0, 0, 0) -1.60229px 1.19694px 0px,
+			rgb(0, 0, 0) -1.97998px 0.28224px 0px, rgb(0, 0, 0) -1.87291px -0.701566px 0px, rgb(0, 0, 0) -1.30729px -1.5136px 0px,
+			rgb(0, 0, 0) -0.421592px -1.95506px 0px, rgb(0, 0, 0) 0.567324px -1.91785px 0px,
+			rgb(0, 0, 0) 1.41734px -1.41108px 0px, rgb(0, 0, 0) 1.92034px -0.558831px 0px;
+		transition: color 0.3s ease-out;
+	}
+	*/
+
 footer {
 	height: max-content;
-	background: $color-dark;
+	background: $base-dark;
 	padding: $size1x $size1x $size2x;
 	margin: 0;
 
@@ -267,6 +310,22 @@ footer {
 			width: 20px;
 			font-size: 0.9em;
 			margin-right: 5px;
+		}
+
+		a {
+			transition: all 0.2s ease-in-out;
+		}
+
+		a:hover {
+			font-size: 1.05em;
+			background: $gradient-inverse;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+
+		a:active {
+			font-size: 1.1em;
+			color: $color-primary;
 		}
 	}
 }

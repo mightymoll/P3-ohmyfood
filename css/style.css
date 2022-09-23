@@ -5,7 +5,7 @@
 /* shadows, ombres */
 /* fonts */
 /* general icon styling for proper display */
-.header-container nav .nav-home {
+.like-btn .heart, .header-container nav .nav-home {
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
   display: inline-block;
@@ -45,10 +45,11 @@
 }
 
 /* positioning for 'like' button */
-.like-btn svg#full, .like-btn svg#empty {
-  cursor: pointer;
+.like-btn .heart {
+  width: 32px;
+  height: 32px;
   position: absolute;
-  bottom: 10%;
+  bottom: 21.5px;
   right: 7.5%;
 }
 
@@ -111,7 +112,7 @@ h3 {
 }
 .header-container nav .nav-home {
   font-size: 1.5em;
-  color: #7e7e7e;
+  color: #7d7d7d;
 }
 
 .location {
@@ -178,7 +179,7 @@ main {
 .list-item .fa-solid {
   width: 1.3em;
   text-align: center;
-  color: #7e7e7e;
+  color: #7d7d7d;
   font-size: 1.2em;
 }
 .list-item .fa-solid.fa-store {
@@ -265,28 +266,67 @@ main {
   position: relative;
 }
 
-.like-btn svg#empty {
-  width: 24px;
-  transition: opacity 0.2s ease-out;
-  stroke: black;
-  stroke-width: 1px;
-  z-index: 0;
+.like-btn {
+  display: block;
+  position: relative;
 }
-.like-btn svg#empty:hover {
-  opacity: 0%;
+.like-btn .heart {
+  line-height: 32px;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 32px;
+  grid-template-rows: 32px;
 }
-.like-btn svg#full {
-  width: 26px;
+.like-btn .fa-heart {
+  display: flex;
+}
+.like-btn i {
+  margin: auto;
+  line-height: 32px;
+}
+.like-btn .far {
+  grid-area: 1/1/2/2;
+  font-size: 28px;
+  color: #000;
+  opacity: 1;
+  transition: opacity 0.3s ease-out;
+}
+.like-btn .fas {
+  grid-area: 1/1/2/2;
+  font-size: 30px;
+  background: linear-gradient(5deg, #ff79da, #9356dc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   opacity: 0;
-  fill: #fff;
-  transition: opacity 0.4s ease-in-out;
-  z-index: 2;
+  transition-delay: 0.1s;
+  transition: all 0.5s ease-in-out;
 }
-.like-btn svg#full:hover {
-  opacity: 100%;
-  background-image: linear-gradient(175deg, #ff79da, #9356dc) !important;
+.like-btn:hover .fas {
+  opacity: 1;
+  font-size: 32px;
+  line-height: 32px;
+}
+.like-btn:focus .fas {
+  opacity: 1;
+}
+.like-btn:hover .far, .like-btn:focus .far {
+  opacity: 0;
 }
 
+/*
+	.heart {
+		@extend %icon;
+		font-size: 25px;
+		color: $color-base;
+		/* text shadow generated with: http://owumaro.github.io/text-stroke-generator/ 
+		text-shadow: rgb(0, 0, 0) 2px 0px 0px, rgb(0, 0, 0) 1.75517px 0.958851px 0px, rgb(0, 0, 0) 1.0806px 1.68294px 0px,
+			rgb(0, 0, 0) 0.141474px 1.99499px 0px, rgb(0, 0, 0) -0.832294px 1.81859px 0px, rgb(0, 0, 0) -1.60229px 1.19694px 0px,
+			rgb(0, 0, 0) -1.97998px 0.28224px 0px, rgb(0, 0, 0) -1.87291px -0.701566px 0px, rgb(0, 0, 0) -1.30729px -1.5136px 0px,
+			rgb(0, 0, 0) -0.421592px -1.95506px 0px, rgb(0, 0, 0) 0.567324px -1.91785px 0px,
+			rgb(0, 0, 0) 1.41734px -1.41108px 0px, rgb(0, 0, 0) 1.92034px -0.558831px 0px;
+		transition: color 0.3s ease-out;
+	}
+	*/
 footer {
   height: -webkit-max-content;
   height: -moz-max-content;
@@ -310,4 +350,17 @@ footer ul.footer__list .link i {
   width: 20px;
   font-size: 0.9em;
   margin-right: 5px;
+}
+footer ul.footer__list a {
+  transition: all 0.2s ease-in-out;
+}
+footer ul.footer__list a:hover {
+  font-size: 1.05em;
+  background: linear-gradient(5deg, #ff79da, #9356dc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+footer ul.footer__list a:active {
+  font-size: 1.1em;
+  color: #9356dc;
 }

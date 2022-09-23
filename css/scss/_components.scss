@@ -1,5 +1,7 @@
 @import "base";
 
+$heart-dim: 32px;
+
 /* general icon styling for proper display */
 %icon {
 	font-family: "Font Awesome 6 Free";
@@ -25,7 +27,7 @@
 %listitem {
 	width: calc(100% - 12px);
 	height: 70px;
-	background-color: $color-light;
+	background-color: $base-xlight;
 	border-radius: 20px;
 	align-self: flex-end;
 	margin: 3% 0;
@@ -35,7 +37,7 @@
 %card {
 	width: $full-width;
 	height: 260px;
-	background: $white;
+	background: $color-base;
 	border-radius: $corner-rad;
 	margin: $half 0;
 	box-shadow: $soft;
@@ -43,8 +45,9 @@
 
 /* positioning for 'like' button */
 %heart-pos {
-	cursor: pointer;
+	width: $heart-dim;
+	height: $heart-dim;
 	position: absolute;
-	bottom: $size2x;
+	bottom: calc((75px - $heart-dim) / 2);
 	right: 7.5%;
 }
