@@ -4,8 +4,19 @@
 /* general styles */ /* colors */
 /* shadows, ombres */
 /* fonts */
+/* transitions */
+a.button {
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+a.button:hover {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
 /* general icon styling for proper display */
-.like-btn .heart, .header-container nav .nav-home {
+.like-btn .heart, .header-container .nav-home {
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
   display: inline-block;
@@ -15,23 +26,19 @@
   -webkit-font-smoothing: antialiased;
 }
 
-.hero .container .hero-btn {
+a.button {
   height: 40px;
   background: linear-gradient(175deg, #ff79da, #9356dc);
   padding: 0.5em 1.5em;
   border-radius: 40px;
-  font: 500 1em "Roboto";
+  font: 500 1rem "Roboto";
   line-height: 40px;
   box-shadow: 2px 3px 10px rgba(30, 29, 29, 0.15);
 }
 
-.list-item {
-  width: calc(100% - 12px);
+.carte .list-item, .list-item {
   height: 70px;
-  background-color: #f6f6f6;
   border-radius: 20px;
-  align-self: flex-end;
-  margin: 3% 0;
   box-shadow: 2px 3px 10px rgba(30, 29, 29, 0.15);
 }
 
@@ -48,14 +55,22 @@
 .like-btn .heart {
   width: 32px;
   height: 32px;
-  position: absolute;
-  bottom: 21.5px;
-  right: 7.5%;
 }
 
 /* colors */
 /* shadows, ombres */
 /* fonts */
+/* transitions */
+a.button {
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+a.button:hover {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
 body {
   box-sizing: border-box;
   margin: 0;
@@ -79,24 +94,25 @@ a {
 }
 
 h1 {
-  font: 700 1.5em "Roboto";
+  font: 700 1.5rem "Roboto";
   margin-bottom: 2.5%;
 }
 
 h2 {
-  font: 700 1.125em "Roboto";
+  font: 700 1.125rem "Roboto";
 }
 
 h3 {
-  font: 300 1.0625em "Roboto";
+  font: 300 1.0625rem "Roboto";
 }
 
 /* start of page content */
 .header-container {
   height: 100%;
   display: flex;
-  flex-direction: center;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
   background: #fff;
   position: relative;
   box-shadow: 0 2px 5px rgba(30, 29, 29, 0.15);
@@ -105,14 +121,14 @@ h3 {
 }
 .header-container .logo-header {
   width: 40%;
-  margin: auto;
 }
-.header-container nav {
-  float: left;
-}
-.header-container nav .nav-home {
-  font-size: 1.5em;
-  color: #7d7d7d;
+.header-container .nav-home {
+  font-size: 1.5rem;
+  color: #353535;
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .location {
@@ -132,6 +148,7 @@ main {
   width: 100%;
 }
 
+/* home page */
 .hero {
   background: #f6f6f6;
 }
@@ -148,18 +165,23 @@ main {
 }
 .hero .container p {
   max-width: 350px;
-  font: 300 1em "Roboto";
+  font: 300 1rem "Roboto";
   margin: 2.5% 0 10% 0;
 }
-.hero .container .hero-btn {
+
+a.button {
   margin-bottom: 5%;
+}
+a.button:hover {
+  background: #9356dc;
+  box-shadow: 2px 3px 10px rgba(30, 29, 29, 0.5);
+  box-shadow: inset 0 0 15px #6c27be;
 }
 
 .howto {
   padding: 15% 5%;
 }
 .howto-list {
-  flex: 1 0 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -169,18 +191,22 @@ main {
 }
 
 .list-item {
+  flex: none;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  gap: 15px;
+  width: calc(100% - 12px);
   line-height: 2em;
+  background-color: #f6f6f6;
+  margin: 2.5% 0;
 }
 .list-item .fa-solid {
   width: 1.3em;
   text-align: center;
   color: #7d7d7d;
   font-size: 1.2em;
+  margin: 0 5%;
 }
 .list-item .fa-solid.fa-store {
   color: #9356dc;
@@ -188,7 +214,8 @@ main {
 .list-item.item3 {
   background: #f2eafb;
 }
-.list-item::before {
+
+.howto-list > .list-item::before {
   counter-increment: list-number;
   content: counter(list-number);
   width: 24px;
@@ -196,7 +223,7 @@ main {
   display: inline-flex;
   justify-content: center;
   color: white;
-  font: 700 0.875em "Roboto";
+  font: 700 0.875rem "Roboto";
   line-height: 24px;
   background: #9356dc;
   border-radius: 50%;
@@ -239,7 +266,7 @@ main {
   border-radius: 2px;
   top: 5%;
   right: 5%;
-  font: 500 0.875em "Roboto";
+  font: 500 0.875rem "Roboto";
   z-index: 1;
 }
 .resto__photo {
@@ -266,13 +293,14 @@ main {
   position: relative;
 }
 
-.like-btn {
+.like-btn .floating {
   display: block;
-  position: relative;
+  position: absolute;
+  bottom: 21.5px;
+  right: 7.5%;
 }
 .like-btn .heart {
   line-height: 32px;
-  text-align: center;
   display: grid;
   grid-template-columns: 32px;
   grid-template-rows: 32px;
@@ -296,41 +324,26 @@ main {
   font-size: 30px;
   background: linear-gradient(5deg, #ff79da, #9356dc);
   -webkit-background-clip: text;
+          background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0;
   transition-delay: 0.1s;
   transition: all 0.5s ease-in-out;
 }
-.like-btn:hover .fas {
+.like-btn a:hover .fas {
   opacity: 1;
   font-size: 32px;
   line-height: 32px;
 }
-.like-btn:focus .fas {
+.like-btn a:focus .fas {
   opacity: 1;
 }
-.like-btn:hover .far, .like-btn:focus .far {
+.like-btn a:hover .far,
+.like-btn a:focus .far {
   opacity: 0;
 }
 
-/*
-	.heart {
-		@extend %icon;
-		font-size: 25px;
-		color: $color-base;
-		/* text shadow generated with: http://owumaro.github.io/text-stroke-generator/ 
-		text-shadow: rgb(0, 0, 0) 2px 0px 0px, rgb(0, 0, 0) 1.75517px 0.958851px 0px, rgb(0, 0, 0) 1.0806px 1.68294px 0px,
-			rgb(0, 0, 0) 0.141474px 1.99499px 0px, rgb(0, 0, 0) -0.832294px 1.81859px 0px, rgb(0, 0, 0) -1.60229px 1.19694px 0px,
-			rgb(0, 0, 0) -1.97998px 0.28224px 0px, rgb(0, 0, 0) -1.87291px -0.701566px 0px, rgb(0, 0, 0) -1.30729px -1.5136px 0px,
-			rgb(0, 0, 0) -0.421592px -1.95506px 0px, rgb(0, 0, 0) 0.567324px -1.91785px 0px,
-			rgb(0, 0, 0) 1.41734px -1.41108px 0px, rgb(0, 0, 0) 1.92034px -0.558831px 0px;
-		transition: color 0.3s ease-out;
-	}
-	*/
 footer {
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
   background: #353535;
   padding: 5% 5% 10%;
   margin: 0;
@@ -358,9 +371,96 @@ footer ul.footer__list a:hover {
   font-size: 1.05em;
   background: linear-gradient(5deg, #ff79da, #9356dc);
   -webkit-background-clip: text;
+          background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 footer ul.footer__list a:active {
   font-size: 1.1em;
   color: #9356dc;
+}
+
+/* for restaurant menu pages */
+.menu {
+  width: 100%;
+}
+.menu-photo {
+  width: 100%;
+}
+.menu img {
+  height: 260px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden;
+  -o-object-position: 30% 50%;
+     object-position: 30% 50%;
+  margin-bottom: -50px;
+  z-index: -1;
+}
+.menu-title {
+  padding: 5%;
+  background: #eaeaea;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu-title h1 {
+  font: 1.75rem "Shrikhand";
+}
+
+.carte {
+  background: #eaeaea;
+  padding: 0 5%;
+  margin-bottom: 10%;
+}
+.carte > section {
+  margin-bottom: 10%;
+}
+.carte .carte-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.carte .list-item {
+  width: 100%;
+}
+.carte .item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 5%;
+  line-height: 1.5rem;
+}
+.carte h2 {
+  font: 300 1rem "Roboto";
+  text-transform: uppercase;
+  margin-bottom: 5%;
+  position: relative;
+}
+.carte h2::before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  border-bottom: 3px solid #99e2d0;
+  width: 40px;
+}
+.carte p.name {
+  font: 500 1.125rem "Roboto";
+}
+.carte p.desc {
+  font: 300 0.9375rem "Roboto";
+  display: inline;
+}
+.carte p.price {
+  display: inline;
+  float: right;
+  margin: 0;
 }

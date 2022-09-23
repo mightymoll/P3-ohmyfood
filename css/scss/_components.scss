@@ -25,12 +25,8 @@ $heart-dim: 32px;
 }
 
 %listitem {
-	width: calc(100% - 12px);
 	height: 70px;
-	background-color: $base-xlight;
 	border-radius: 20px;
-	align-self: flex-end;
-	margin: 3% 0;
 	box-shadow: $soft;
 }
 
@@ -47,7 +43,4 @@ $heart-dim: 32px;
 %heart-pos {
 	width: $heart-dim;
 	height: $heart-dim;
-	position: absolute;
-	bottom: calc((75px - $heart-dim) / 2);
-	right: 7.5%;
 }

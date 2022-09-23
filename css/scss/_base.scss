@@ -15,18 +15,34 @@ $base-dark: darken($color-base, 79.2%);
 /* shadows, ombres */
 $harsh: 0 2px 5px rgba(30, 29, 29, 0.15);
 $soft: 2px 3px 10px rgba(30, 29, 29, 0.15);
+$accent: 2px 3px 10px rgba(30, 29, 29, 0.5);
+$inset: inset 0 0 15px darken($color-primary, 15%);
 
 /* fonts */
 $font-main: "Roboto", sans-serif;
 $font-accent: "Shrikhand", cursive;
-$font-icon: "icon-worksregular";
 
 $textstyle: (
-	h1: 700 1.5em "Roboto",
-	h2: 700 1.125em "Roboto",
-	h3: 300 1.0625em "Roboto",
-	tagline: 300 1em "Roboto",
-	button: 500 1em "Roboto",
-	listnum: 700 0.875em "Roboto",
-	phototag: 500 0.875em "Roboto",
+	h1: 700 1.5rem "Roboto",
+	h1-menu: 1.75rem "Shrikhand",
+	h2: 700 1.125rem "Roboto",
+	h2-menu: 300 1rem "Roboto",
+	h3: 300 1.0625rem "Roboto",
+	tagline: 300 1rem "Roboto",
+	button: 500 1rem "Roboto",
+	listnum: 700 0.875rem "Roboto",
+	phototag: 500 0.875rem "Roboto",
+	menu-name: 500 1.125rem "Roboto",
+	menu-desc: 300 0.9375rem "Roboto",
 );
+
+/* transitions */
+%transition-out {
+	opacity: 1;
+	transition: opacity 0.5s ease-out;
+}
+
+%transition-in {
+	opacity: 1;
+	transition: opacity 1s ease-in-out;
+}

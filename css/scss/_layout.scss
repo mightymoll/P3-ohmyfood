@@ -9,10 +9,6 @@ $half: 2.5%;
 $gap: 30px;
 $corner-rad: 15px;
 
-@mixin width($n: $full-width) {
-	width: $n;
-}
-
 %centered {
 	padding: $padding-side;
 	margin-left: auto;
@@ -35,9 +31,5 @@ $corner-rad: 15px;
 	}
 	@if $gap != false {
 		gap: $gap;
-	}
-
-	@if $flex != false {
-		flex: $flex;
 	}
 }
