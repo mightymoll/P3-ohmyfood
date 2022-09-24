@@ -365,7 +365,7 @@ footer {
 .carte {
 	background: $base-light;
 	padding: $padding-side;
-	margin-bottom: $size2x;
+	padding-bottom: $size1x;
 
 	> section {
 		margin-bottom: $size2x;
@@ -415,5 +415,13 @@ footer {
 		display: inline;
 		float: right;
 		margin: 0;
+	}
+}
+
+.cta {
+	@include flexbox(center, center);
+
+	a {
+		min-width: 40%;
 	}
 }

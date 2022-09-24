@@ -33,6 +33,7 @@ a.button {
   border-radius: 40px;
   font: 500 1rem "Roboto";
   line-height: 40px;
+  text-align: center;
   box-shadow: 2px 3px 10px rgba(30, 29, 29, 0.15);
 }
 
@@ -416,7 +417,7 @@ footer ul.footer__list a:active {
 .carte {
   background: #eaeaea;
   padding: 0 5%;
-  margin-bottom: 10%;
+  padding-bottom: 5%;
 }
 .carte > section {
   margin-bottom: 10%;
@@ -463,4 +464,13 @@ footer ul.footer__list a:active {
   display: inline;
   float: right;
   margin: 0;
+}
+
+.cta {
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+}
+.cta a {
+  min-width: 40%;
 }
