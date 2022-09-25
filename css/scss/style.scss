@@ -42,6 +42,77 @@ h3 {
 	font: map-get($textstyle, "h3");
 }
 
+/* loading screen w/spinner */
+#loading-screen {
+	width: $full-width;
+	min-height: 100vh;
+	max-height: 100vh;
+	position: fixed;
+	background: $color-gradient;
+	z-index: 50;
+	@include flexbox(center, center);
+	animation: fadeout;
+	animation-delay: 3s;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+	animation-timing-function: cubic-bezier(0.5, 0.05, 0.6, 0.95);
+
+	@keyframes fadeout {
+		0% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+
+	.load-items {
+		@include flexbox(column, center, center);
+		position: fixed;
+		top: 30%;
+
+		.spinner {
+			display: grid;
+			grid-template-columns: 150px;
+			grid-template-rows: 150px;
+			margin-bottom: $size2x;
+
+			img {
+				filter: invert(100%);
+				width: 150px;
+				height: 150px;
+				display: block;
+				grid-area: 1 / 1 / 2 / 2;
+				@extend %rotate;
+			}
+		}
+
+		@keyframes spin {
+			from {
+				transform: rotate(0deg);
+			}
+			to {
+				transform: rotate(360deg);
+			}
+		}
+
+		.clockwise {
+			@extend %rotate;
+			animation-direction: normal;
+		}
+
+		.anticlockwise {
+			@extend %rotate;
+			animation-direction: reverse;
+		}
+
+		.logo-loading {
+			filter: invert(100%);
+		}
+	}
+}
+
 /* start of page content */
 .header-container {
 	height: 100%;
@@ -111,9 +182,8 @@ a.button {
 	@extend %transition-out;
 
 	&:hover {
-		background: $color-primary;
+		filter: opacity(90%);
 		box-shadow: $accent;
-		box-shadow: $inset;
 		@extend %transition-in;
 	}
 }

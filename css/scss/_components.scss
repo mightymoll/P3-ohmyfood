@@ -45,3 +45,11 @@ $heart-dim: 32px;
 	width: $heart-dim;
 	height: $heart-dim;
 }
+
+%rotate {
+	animation-name: spin;
+	animation-delay: 0.5s;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: linear;
+}
