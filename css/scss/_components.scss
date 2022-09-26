@@ -31,6 +31,13 @@ $heart-dim: 32px;
 	box-shadow: $soft;
 }
 
+%appear {
+	animation-name: appear;
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	animation-timing-function: ease-in;
+}
+
 %card {
 	width: $full-width;
 	height: 260px;

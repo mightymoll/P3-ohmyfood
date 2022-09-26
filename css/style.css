@@ -16,7 +16,7 @@ a.button:hover {
 }
 
 /* general icon styling for proper display */
-.carte-list .list-item .check, .like-btn .heart, .header-container .nav-home {
+.list-item .check, .like-btn .heart, .header-container .nav-home {
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
   display: inline-block;
@@ -37,10 +37,21 @@ a.button {
   box-shadow: 2px 3px 10px rgba(30, 29, 29, 0.15);
 }
 
-.carte-list .list-item, .list-item {
+.list-item {
   height: 70px;
   border-radius: 20px;
   box-shadow: 2px 3px 10px rgba(30, 29, 29, 0.15);
+}
+
+.list-item, .carte section h2 {
+  -webkit-animation-name: appear;
+          animation-name: appear;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
 }
 
 .card {
@@ -93,7 +104,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   text-overflow: ellipsis;
-  min-width: 215px;
+  min-width: 300px;
 }
 
 a,
@@ -307,7 +318,7 @@ a.button:hover {
   width: 1.3em;
   color: #7d7d7d;
   font-size: 1.2em;
-  margin: 0 15px;
+  margin: 0 5%;
 }
 .list-item .fa-solid.fa-store {
   color: #9356dc;
@@ -365,8 +376,8 @@ a.button:hover {
   background: #99e2d0;
   color: #008766;
   border-radius: 2px;
-  top: 5%;
-  right: 5%;
+  top: 20px;
+  right: 20px;
   font: 500 0.875rem "Roboto";
   z-index: 1;
 }
@@ -519,14 +530,19 @@ footer ul.footer__list a:active {
   padding: 0 5%;
   padding-bottom: 5%;
 }
-.carte > section {
+.carte section {
   margin-bottom: 10%;
 }
-.carte h2 {
+.carte section h2 {
+  display: block;
   font: 300 1rem "Roboto";
   text-transform: uppercase;
   margin-bottom: 5%;
   position: relative;
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
 }
 .carte h2::before {
   content: "";
@@ -542,18 +558,69 @@ footer ul.footer__list a:active {
   flex-direction: column;
   justify-content: space-between;
 }
-.carte-list .list-item {
+
+.list-item {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: stretch;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
 }
-.carte-list .list-item:hover .check {
+.list-item:nth-child(1) {
+  -webkit-animation-delay: 0.25s;
+          animation-delay: 0.25s;
+}
+.list-item:nth-child(2) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+.list-item:nth-child(3) {
+  -webkit-animation-delay: 0.75s;
+          animation-delay: 0.75s;
+}
+.list-item:nth-child(4) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+.list-item:nth-child(5) {
+  -webkit-animation-delay: 1.25s;
+          animation-delay: 1.25s;
+}
+.list-item:nth-child(6) {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+.list-item:nth-child(7) {
+  -webkit-animation-delay: 1.75s;
+          animation-delay: 1.75s;
+}
+.list-item:nth-child(8) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+.list-item:nth-child(9) {
+  -webkit-animation-delay: 2.25s;
+          animation-delay: 2.25s;
+}
+.list-item:nth-child(10) {
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+}
+.list-item:nth-child(11) {
+  -webkit-animation-delay: 2.75s;
+          animation-delay: 2.75s;
+}
+.list-item:nth-child(12) {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+.list-item:hover .check {
   display: flex;
   opacity: 1;
 }
-.carte-list .list-item .check {
+.list-item .check {
   width: 70px;
   height: 70px;
   background-color: #99e2d0;
@@ -565,13 +632,31 @@ footer ul.footer__list a:active {
   align-items: center;
   display: none;
   opacity: 0;
-  transition: all 0.4s ease;
-  -webkit-transition: all 0.4s ease;
 }
-.carte-list .list-item .check i {
+.list-item .check i {
   color: white;
 }
-.carte-list .item-info {
+
+@-webkit-keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translatex(100px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translatex(100px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.item-info {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -582,12 +667,7 @@ footer ul.footer__list a:active {
   max-height: 70px;
   padding: 13px 15px;
 }
-.carte-list .item-info p {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.carte-list .item-info > div {
+.item-info > div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -595,13 +675,18 @@ footer ul.footer__list a:active {
   margin-right: 5%;
   min-width: 0;
 }
-.carte-list .item-info p.name {
+.item-info p {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.item-info .name {
   font: 500 1.125rem "Roboto";
 }
-.carte-list .item-info p.desc {
+.item-info .desc {
   font: 300 0.9375rem "Roboto";
 }
-.carte-list .item-info .price {
+.item-info .price {
   flex-shrink: 0;
   line-height: 0.9375rem;
 }
