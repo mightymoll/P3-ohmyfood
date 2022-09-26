@@ -103,8 +103,6 @@ body {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
-  text-overflow: ellipsis;
-  min-width: 215px;
 }
 
 a,
@@ -277,11 +275,13 @@ main {
 }
 .hero .container h1 {
   max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .hero .container p {
   max-width: 350px;
   font: 300 1rem "Roboto";
-  margin: 2.5% 0 10% 0;
+  margin: 2.5% auto 10% auto;
 }
 
 a.button {
@@ -297,29 +297,32 @@ a.button:hover {
 }
 .howto-list {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: space-between;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   counter-reset: list-number;
   gap: 30px;
   padding: 0;
 }
 
 .list-item {
+  flex: none;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   width: calc(100% - 12px);
-  line-height: 2em;
+  line-height: 2rem;
   background-color: #f6f6f6;
   margin: 2.5% 0;
 }
 .list-item .fa-solid {
   width: 1.3em;
   color: #7d7d7d;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   margin: 0 15px;
 }
 .list-item .fa-solid.fa-store {
@@ -701,4 +704,111 @@ footer ul.footer__list a:active {
 }
 .cta a {
   min-width: 40%;
+}
+
+/* larger devices, ie: tablets; 768px and desktop size */
+@media only screen and (min-width: 768px) {
+  /*** START OF PAGE - MED DEVICES---*/
+  body {
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .logo-header {
+    height: 40px;
+  }
+  .hero > .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 10% 5%;
+    text-align: left;
+    background: #fff;
+  }
+  .hero > .container .tagline {
+    flex: 1 1 70%;
+  }
+  .hero > .container h1 {
+    margin: 0;
+    max-width: 100%;
+  }
+  .hero > .container p {
+    margin: 0;
+    margin-top: 2.5%;
+  }
+  .hero > .container .button {
+    flex: none;
+    margin-bottom: 0;
+    margin-left: 5%;
+  }
+  .howto {
+    padding: 5%;
+    text-align: center;
+    background: radial-gradient(#ff79da, #9356dc);
+  }
+  .howto h1 {
+    margin-bottom: 2.5%;
+    color: white;
+  }
+  .howto p {
+    line-height: 1.2rem;
+  }
+  .howto .howto-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5%;
+  }
+  .list-item {
+    flex: 1 1 33%;
+    max-width: 32%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding-top: 5%;
+    padding-bottom: 2.5%;
+    margin-bottom: 0;
+  }
+  .list-item .fa-solid {
+    font-size: 1.5rem;
+  }
+  .list-item p {
+    font-size: 1rem;
+  }
+  .howto-list > .list-item::before {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: -15px;
+    line-height: 30px;
+    font-size: 1rem;
+    margin-left: 0;
+  }
+  #restaurants {
+    background: #fff;
+    padding-top: 10%;
+    margin-bottom: 5%;
+    max-height: -webkit-fit-content;
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+  }
+  #restaurants .cards {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2.5%;
+    flex-wrap: wrap;
+  }
+  #restaurants .card {
+    flex: 1 1 48%;
+    max-width: 48.5%;
+    margin: 0;
+    margin-bottom: 2.5%;
+  }
 }
