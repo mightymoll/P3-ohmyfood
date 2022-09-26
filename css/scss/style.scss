@@ -293,7 +293,7 @@ a.button {
 
 	&__footer {
 		padding: 15px;
-		height: 75px;
+		max-height: 75px;
 		color: #000;
 		@include flexbox(column, space-between);
 		position: relative;
