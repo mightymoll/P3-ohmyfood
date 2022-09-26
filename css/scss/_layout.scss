@@ -15,9 +15,8 @@ $corner-rad: 15px;
 	margin-right: auto;
 }
 
-%flex-column {
+@mixin flexbox($flex-direction: false, $justify-content: false, $align-items: false, $gap: false, $flex: false) {
 	display: flex;
-<<<<<<< HEAD
 
 	@if $flex-direction != false {
 		flex-direction: $flex-direction;
@@ -33,15 +32,4 @@ $corner-rad: 15px;
 	@if $gap != false {
 		gap: $gap;
 	}
-=======
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-}
-
-%flex-row {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
->>>>>>> parent of 0e13c16 (v0.5 list and flexbox mixin)
 }
