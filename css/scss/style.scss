@@ -14,6 +14,8 @@ body {
 	font-size: 16px;
 	font-family: $font-main;
 	font-weight: 500;
+	text-overflow: ellipsis;
+	min-width: 215px;
 }
 
 a,
@@ -199,7 +201,6 @@ a.button {
 }
 
 .list-item {
-	flex: none;
 	@extend %listitem;
 	@include flexbox(row, flex-start, center);
 	width: calc(100% - 12px);
@@ -209,10 +210,9 @@ a.button {
 
 	.fa-solid {
 		width: 1.3em;
-		text-align: center;
 		color: $base-med;
 		font-size: 1.2em;
-		margin: 0 $size1x;
+		margin: 0 15px;
 
 		&.fa-store {
 			color: $color-primary;
@@ -441,22 +441,6 @@ footer {
 		margin-bottom: $size2x;
 	}
 
-	.carte-list {
-		@include flexbox(column, space-between);
-	}
-
-	.list-item {
-		@extend %listitem;
-		width: 100%;
-	}
-
-	.item {
-		width: 100%;
-		@include flexbox(column, space-between, stretch);
-		padding: $size1x;
-		line-height: 1.5rem;
-	}
-
 	h2 {
 		font: map-get($textstyle, "h2-menu");
 		text-transform: uppercase;
@@ -472,19 +456,75 @@ footer {
 		border-bottom: 3px solid $color-tertiary;
 		width: 40px;
 	}
+}
 
-	p.name {
-		font: map-get($textstyle, "menu-name");
+.carte-list {
+	@include flexbox(column, space-between);
+
+	.list-item {
+		@extend %listitem;
+		width: 100%;
+		@include flexbox(row, space-between, stretch);
+
+		&:hover {
+			.check {
+				display: flex;
+				opacity: 1;
+			}
+		}
+
+		.check {
+			@extend %icon;
+			width: 70px;
+			height: 70px;
+			background-color: $color-tertiary;
+			border-bottom-right-radius: 20px;
+			border-top-right-radius: 20px;
+			@include flexbox(row, center, center);
+			display: none;
+			opacity: 0;
+			transition: all 0.4s ease;
+			-webkit-transition: all 0.4s ease;
+
+			i {
+				color: white;
+			}
+		}
 	}
 
-	p.desc {
-		font: map-get($textstyle, "menu-desc");
-		display: inline;
-	}
-	p.price {
-		display: inline;
-		float: right;
-		margin: 0;
+	.item-info {
+		@include flexbox(row, space-between, flex-end);
+		width: 100%;
+		flex-shrink: 1;
+		min-width: 0;
+		max-height: 70px;
+		padding: 13px 15px;
+
+		p {
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+
+		> div {
+			@include flexbox(column, space-between);
+			height: 100%;
+			margin-right: $size1x;
+			min-width: 0;
+		}
+
+		p.name {
+			font: map-get($textstyle, "menu-name");
+		}
+
+		p.desc {
+			font: map-get($textstyle, "menu-desc");
+		}
+
+		.price {
+			flex-shrink: 0;
+			line-height: 0.9375rem;
+		}
 	}
 }
 
