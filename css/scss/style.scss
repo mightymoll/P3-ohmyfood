@@ -191,7 +191,12 @@ a.button {
 }
 
 .howto {
+	@extend %centered;
 	padding: $size3x $size1x;
+
+	h1 {
+		margin-bottom: $size1x;
+	}
 
 	&-list {
 		@include flexbox(row, flex-end, space-between);
@@ -201,6 +206,7 @@ a.button {
 }
 
 .list-item {
+	flex: none;
 	@extend %listitem;
 	@include flexbox(row, flex-start, center);
 	width: calc(100% - 12px);
@@ -210,6 +216,7 @@ a.button {
 
 	.fa-solid {
 		width: 1.3em;
+		text-align: center;
 		color: $base-med;
 		font-size: 1.2em;
 		margin: 0 $size1x;
@@ -450,38 +457,53 @@ footer {
 			animation-delay: 0;
 			animation-duration: 1s;
 		}
+
+		h2::before {
+			content: "";
+			position: absolute;
+			bottom: -8px;
+			left: 0;
+			border-bottom: 3px solid $color-tertiary;
+			width: 40px;
+		}
 	}
 
-	h2::before {
-		content: "";
-		position: absolute;
-		bottom: -8px;
-		left: 0;
-		border-bottom: 3px solid $color-tertiary;
-		width: 40px;
+	.carte-list {
+		@include flexbox(column, space-between);
+	}
+
+	.list-item {
+		@extend %listitem;
+		width: 100%;
+	}
+
+	.item {
+		width: 100%;
+		@include flexbox(column, space-between, stretch);
+		padding: $size1x;
+		line-height: 1.5rem;
 	}
 }
 
 .carte-list {
 	@include flexbox(column, space-between);
-}
 
-.list-item {
-	@extend %listitem;
-	@extend %appear;
-	width: 100%;
-	@include flexbox(row, space-between, stretch);
-	animation-delay: 1s;
-	@for $i from 1 through 12 {
-		&:nth-child(#{$i}) {
-			animation-delay: $i * 0.25s;
+	.list-item {
+		@extend %listitem;
+		@extend %appear;
+		width: 100%;
+		@include flexbox(row, space-between, stretch);
+		animation-delay: 1s;
+		@for $i from 1 through 12 {
+			&:nth-child(#{$i}) {
+				animation-delay: $i * 0.25s;
+			}
 		}
-	}
-
-	&:hover {
-		.check {
-			display: flex;
-			opacity: 1;
+		&:hover {
+			.check {
+				display: flex;
+				opacity: 1;
+			}
 		}
 	}
 
