@@ -1,7 +1,27 @@
 /* VENDOR - Default fall-backs and external files */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Shrikhand&display=swap");
 /* SCSS Files */
-/* general styles */ /* colors */
+/* general styles */
+.howto {
+  padding: 0 5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.howto-list, .hero .container, .logo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* colors */
 /* shadows, ombres */
 /* fonts */
 /* transitions */
@@ -33,6 +53,7 @@ a.button {
   border-radius: 40px;
   font: 500 1rem "Roboto";
   line-height: 40px;
+<<<<<<< HEAD
   text-align: center;
   box-shadow: 2px 3px 10px rgba(30, 29, 29, 0.15);
 }
@@ -69,6 +90,20 @@ a.button {
           animation-iteration-count: 1;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
+=======
+  box-shadow: 0px 5px 10px rgba(30, 29, 29, 0.15);
+}
+
+.list-item {
+  width: 97.5%;
+  height: 60px;
+  background: #f6f6f6;
+  border-radius: 15px;
+  margin: 0;
+  padding: 0;
+  align-self: flex-end;
+  box-shadow: 0px 5px 10px rgba(30, 29, 29, 0.15);
+>>>>>>> parent of 0e13c16 (v0.5 list and flexbox mixin)
 }
 
 /* colors */
@@ -209,6 +244,7 @@ h3 {
 }
 
 /* start of page content */
+<<<<<<< HEAD
 .header-container {
   height: 100%;
   display: flex;
@@ -231,6 +267,20 @@ h3 {
   left: 5%;
   top: 50%;
   transform: translateY(-50%);
+=======
+.logo-container {
+  height: 4em;
+  justify-content: space-around;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(30, 29, 29, 0.15);
+  padding-top: 2.5%;
+  position: relative;
+}
+.logo-container .header-logo {
+  width: 160px;
+  display: block;
+  position: absolute;
+>>>>>>> parent of 0e13c16 (v0.5 list and flexbox mixin)
 }
 
 .location {
@@ -238,12 +288,19 @@ h3 {
   background: #eaeaea;
   color: #353535;
   text-align: center;
-  line-height: 3em;
 }
 .location i {
   font-size: 1em;
+<<<<<<< HEAD
   margin-right: 15px;
   margin-left: -2.5%;
+=======
+  margin-right: 1%;
+}
+.location p {
+  display: inline-block;
+  line-height: 3em;
+>>>>>>> parent of 0e13c16 (v0.5 list and flexbox mixin)
 }
 
 main {
@@ -255,10 +312,6 @@ main {
   background: #f6f6f6;
 }
 .hero .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
   text-align: center;
   padding: 10% 5%;
 }
@@ -281,6 +334,7 @@ a.button:hover {
 
 .howto {
   padding: 15% 5%;
+<<<<<<< HEAD
 }
 .howto-list {
   display: flex;
@@ -288,10 +342,20 @@ a.button:hover {
   justify-content: flex-end;
   align-items: space-between;
   flex-wrap: wrap;
+=======
+}
+.howto h1 {
+  margin-bottom: 5%;
+}
+.howto-list {
+>>>>>>> parent of 0e13c16 (v0.5 list and flexbox mixin)
   counter-reset: list-number;
+  gap: 30px;
+  padding: 0;
 }
 
 .list-item {
+<<<<<<< HEAD
   flex: none;
   display: flex;
   flex-direction: row;
@@ -317,18 +381,38 @@ a.button:hover {
 }
 
 .howto-list > .list-item::before {
+=======
+  gap: 5%;
+  z-index: 0;
+}
+.list-item i {
+  color: #7e7e7e;
+  font-size: 1.125em;
+}
+.list-item i:hover {
+  color: #9356dc;
+}
+
+.list-item::before {
+>>>>>>> parent of 0e13c16 (v0.5 list and flexbox mixin)
   counter-increment: list-number;
   content: counter(list-number);
-  width: 24px;
-  height: 24px;
+  width: 25px;
+  height: 25px;
   display: inline-flex;
+  align-items: center;
   justify-content: center;
   color: white;
+<<<<<<< HEAD
   font: 700 0.875rem "Roboto";
   line-height: 24px;
+=======
+  font: 700 0.875em "Roboto";
+>>>>>>> parent of 0e13c16 (v0.5 list and flexbox mixin)
   background: #9356dc;
   border-radius: 50%;
-  margin-left: -12px;
+  margin-left: -2.5%;
+  z-index: 1;
 }
 
 #restaurants {

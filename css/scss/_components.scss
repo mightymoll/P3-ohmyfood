@@ -26,8 +26,18 @@ $heart-dim: 32px;
 }
 
 %listitem {
+<<<<<<< HEAD
 	height: 70px;
 	border-radius: 20px;
+=======
+	width: 97.5%;
+	height: 60px;
+	background: $color-light;
+	border-radius: 15px;
+	margin: 0;
+	padding: 0;
+	align-self: flex-end;
+>>>>>>> parent of 0e13c16 (v0.5 list and flexbox mixin)
 	box-shadow: $soft;
 }
 

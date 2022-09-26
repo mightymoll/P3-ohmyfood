@@ -142,7 +142,6 @@ h3 {
 	background: $base-light;
 	color: $base-dark;
 	text-align: center;
-	line-height: 3em;
 
 	i {
 		font-size: 1em;
@@ -186,6 +185,26 @@ a.button {
 		box-shadow: $accent;
 		@extend %transition-in;
 	}
+
+<<<<<<< HEAD
+a.button {
+	@extend %btnstyle;
+	margin-bottom: $size1x;
+	@extend %transition-out;
+
+	&:hover {
+		filter: opacity(90%);
+		box-shadow: $accent;
+		@extend %transition-in;
+=======
+.howto {
+	@extend %centered;
+	padding: $size3x $size1x;
+
+	h1 {
+		margin-bottom: $size1x;
+>>>>>>> parent of 0e13c16 (v0.5 list and flexbox mixin)
+	}
 }
 
 .howto {
@@ -195,6 +214,8 @@ a.button {
 		@include flexbox(row, flex-end, space-between);
 		flex-wrap: wrap;
 		counter-reset: list-number;
+		gap: $gap;
+		padding: 0;
 	}
 }
 
