@@ -135,6 +135,13 @@ h3 {
 		left: $size1x;
 		top: 50%;
 		transform: translateY(-50%);
+
+		&:hover {
+			background: $color-gradient;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			font-size: 1.75rem;
+		}
 	}
 }
 
@@ -244,7 +251,6 @@ a.button {
 }
 
 #restaurants {
-	height: max-content;
 	background: $base-xlight;
 	padding: $size3x $size1x;
 
@@ -280,7 +286,7 @@ a.button {
 
 	&__photo {
 		width: 100%;
-		height: 185px;
+		height: 180px;
 	}
 
 	img {
@@ -294,7 +300,7 @@ a.button {
 
 	&__footer {
 		padding: 15px;
-		max-height: 75px;
+		max-height: 70px;
 		color: #000;
 		@include flexbox(column, space-between);
 		position: relative;
@@ -305,7 +311,7 @@ a.button {
 	.floating {
 		display: block;
 		position: absolute;
-		bottom: calc((75px - $heart-dim) / 2);
+		bottom: calc((70px - $heart-dim) / 2);
 		right: 7.5%;
 	}
 
@@ -406,6 +412,7 @@ footer {
 /* for restaurant menu pages */
 .menu {
 	width: $full-width;
+	min-width: 190px;
 
 	&-photo {
 		width: 100%;
@@ -434,6 +441,11 @@ footer {
 			font: map-get($textstyle, "h1-menu");
 		}
 	}
+}
+
+article {
+	max-width: 100%;
+	overflow-x: hidden;
 }
 
 .carte {
@@ -468,6 +480,7 @@ footer {
 
 .carte-list {
 	@include flexbox(column, space-between);
+	margin-top: $size1x;
 
 	.list-item {
 		@extend %listitem;
@@ -531,6 +544,7 @@ footer {
 		height: 100%;
 		margin-right: $size1x;
 		min-width: 0;
+		text-align: left;
 	}
 
 	p {
@@ -653,8 +667,8 @@ footer {
 	#restaurants {
 		background: $color-base;
 		padding-top: $size2x;
-		margin-bottom: $size1x;
-		max-height: fit-content;
+		padding-bottom: $size1x;
+		max-height: min-content;
 
 		.cards {
 			width: 100%;
@@ -669,5 +683,8 @@ footer {
 			margin: 0;
 			margin-bottom: $half;
 		}
+	}
+	footer {
+		padding: $size1x;
 	}
 }
