@@ -16,7 +16,7 @@ a.button:hover {
 }
 
 /* general icon styling for proper display */
-.carte-list .list-item .check, .like-btn .heart, .header-container .nav-home {
+.check, .like-btn .heart, .header-container .nav-home {
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
   display: inline-block;
@@ -27,7 +27,6 @@ a.button:hover {
 }
 
 a.button {
-  height: 40px;
   background: linear-gradient(175deg, #ff79da, #9356dc);
   padding: 0.5em 1.5em;
   border-radius: 40px;
@@ -37,14 +36,13 @@ a.button {
   box-shadow: 2px 3px 10px rgba(30, 29, 29, 0.15);
 }
 
-.carte-list div.list-item, .list-item {
+.list-item, .howto-item {
   height: 70px;
   border-radius: 20px;
   box-shadow: 2px 3px 10px rgba(30, 29, 29, 0.15);
-  flex: 0;
 }
 
-.carte-list .list-item, .carte h2 {
+.list-item, .section-title {
   -webkit-animation-name: appear;
           animation-name: appear;
   -webkit-animation-duration: 1s;
@@ -55,12 +53,12 @@ a.button {
           animation-timing-function: ease-in;
 }
 
-.card {
+.r-card {
   width: 100%;
   height: 225px;
   background: #fff;
   border-radius: 15px;
-  margin: 2.5% 0;
+  margin: 0;
   box-shadow: 2px 3px 10px rgba(30, 29, 29, 0.15);
 }
 
@@ -138,9 +136,9 @@ h3 {
 /* loading screen w/spinner */
 #loading-screen {
   width: 100%;
-  min-height: 100vh;
-  max-height: 100vh;
+  height: 100vh;
   position: fixed;
+  left: 0;
   background: linear-gradient(175deg, #ff79da, #9356dc);
   z-index: 50;
   display: flex;
@@ -276,7 +274,7 @@ main {
 .hero {
   background: #f6f6f6;
 }
-.hero .container {
+.hero-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -284,20 +282,17 @@ main {
   text-align: center;
   padding: 10% 5%;
 }
-.hero .container h1 {
+.hero-container h1 {
   max-width: 250px;
   margin-left: auto;
   margin-right: auto;
 }
-.hero .container p {
+.hero-container p {
   max-width: 350px;
   font: 300 1rem "Roboto";
   margin: 2.5% auto 10% auto;
 }
 
-a.button {
-  margin-bottom: 5%;
-}
 a.button:hover {
   filter: opacity(90%);
   box-shadow: 2px 3px 10px rgba(30, 29, 29, 0.5);
@@ -306,6 +301,7 @@ a.button:hover {
 .howto {
   padding: 15% 5%;
 }
+
 .howto-list {
   display: flex;
   flex-direction: column;
@@ -319,7 +315,7 @@ a.button:hover {
   padding: 0;
 }
 
-.list-item {
+.howto-item {
   flex: none;
   display: flex;
   flex-direction: row;
@@ -328,22 +324,22 @@ a.button:hover {
   width: calc(100% - 12px);
   line-height: 2rem;
   background-color: #f6f6f6;
-  margin: 2.5% 0;
+  margin: 0;
 }
-.list-item .fa-solid {
+.howto-item .fa-solid {
   width: 1.3em;
   color: #7d7d7d;
   font-size: 1.2rem;
   margin: 0 15px;
 }
-.list-item .fa-solid.fa-store {
+.howto-item .fa-solid.fa-store {
   color: #9356dc;
 }
-.list-item.item3 {
+.howto-item.item3 {
   background: #f2eafb;
 }
 
-.howto-list > .list-item::before {
+.howto-item::before {
   counter-increment: list-number;
   content: counter(list-number);
   width: 24px;
@@ -365,16 +361,20 @@ a.button:hover {
 #restaurants .cards {
   flex: 1;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
 }
 
-.card {
+.r-card {
   position: relative;
 }
+.r-card:hover {
+  transform: scale(102%);
+  box-shadow: 2px 3px 10px rgba(30, 29, 29, 0.5);
+}
 
-.resto {
+.r-card_content {
   height: 100%;
   display: block;
   display: flex;
@@ -382,7 +382,7 @@ a.button:hover {
   justify-content: flex-start;
   position: relative;
 }
-.resto .photo-tag {
+.r-card_content .photo-tag {
   position: absolute;
   padding: 5px 12px;
   background: #99e2d0;
@@ -393,36 +393,35 @@ a.button:hover {
   font: 500 0.875rem "Roboto";
   z-index: 1;
 }
-.resto__photo {
+.r-card_content .r-photo {
   width: 100%;
   height: 150px;
 }
-.resto__photo.pos1 {
+.r-card_content .r-photo.pos1 {
   -o-object-position: 50% 60%;
      object-position: 50% 60%;
 }
-.resto__photo.pos2 {
+.r-card_content .r-photo.pos2 {
   -o-object-position: 50% 80%;
      object-position: 50% 80%;
 }
-.resto__photo.pos3 {
+.r-card_content .r-photo.pos3 {
   -o-object-position: 50% 90%;
      object-position: 50% 90%;
 }
-.resto img {
-  max-height: 100%;
+.r-card_content img.r-photo {
   -o-object-fit: cover;
      object-fit: cover;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   z-index: 0;
 }
-.resto__footer {
+.r-card_content .r-footer {
   padding: 15px;
   color: #000;
   position: relative;
 }
-.resto__footer h2 {
+.r-card_content .r-footer h2 {
   margin-bottom: 4px;
 }
 
@@ -440,8 +439,6 @@ a.button:hover {
 }
 .like-btn .fa-heart {
   display: flex;
-}
-.like-btn i {
   margin: auto;
   line-height: 32px;
 }
@@ -478,49 +475,52 @@ a.button:hover {
 
 footer {
   background: #353535;
-  padding: 5% 5% 7.5%;
+  padding: 5%;
+  padding-bottom: 7.5%;
   margin: 0;
 }
-footer img {
+footer .footer-logo {
   filter: invert(100%);
-  width: 30%;
-  margin-bottom: 5%;
+  width: 35%;
+  margin-bottom: 2.5%;
 }
-footer ul.footer__list {
+footer ul.footer-list {
   list-style: none;
   line-height: 1.75em;
   margin: 0;
   padding: 0;
 }
-footer ul.footer__list .link i {
+footer ul.footer-list .link i {
   width: 20px;
   font-size: 0.9em;
-  margin-right: 5px;
+  margin-right: 1%;
 }
-footer ul.footer__list a {
+footer ul.footer-list a {
+  font-weight: 400;
   transition: all 0.2s ease-in-out;
 }
-footer ul.footer__list a:hover {
+footer ul.footer-list a:hover {
   font-size: 1.05em;
   background: linear-gradient(5deg, #ff79da, #9356dc);
   -webkit-background-clip: text;
           background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-footer ul.footer__list a:active {
+footer ul.footer-list a:active {
   font-size: 1.1em;
   color: #9356dc;
 }
 
-/* for restaurant menu pages */
-.menu {
+/* >>>> for restaurant pages <<<< */
+.menu-header {
   width: 100%;
   min-width: 190px;
 }
-.menu-photo {
+.menu-header .header-photo {
   width: 100%;
+  height: 100%;
 }
-.menu img {
+.menu-header .header-photo img {
   height: 260px;
   width: 100%;
   -o-object-fit: cover;
@@ -531,8 +531,10 @@ footer ul.footer__list a:active {
   margin-bottom: -50px;
   z-index: -1;
 }
+
 .menu-title {
   padding: 5%;
+  padding-bottom: 0;
   background: #eaeaea;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
@@ -547,122 +549,38 @@ footer ul.footer__list a:active {
   font: 1.75rem "Shrikhand";
 }
 
-article {
+.menu {
   max-width: 100%;
   overflow-x: hidden;
-}
-
-.carte {
   background: #eaeaea;
   padding: 0 5%;
-  padding-bottom: 5%;
 }
-.carte > section {
+
+.menu-section {
   margin-bottom: 10%;
 }
-.carte h2 {
-  display: block;
-  font: 300 1rem "Roboto";
-  text-transform: uppercase;
-  margin-bottom: 5%;
-  position: relative;
+
+.section-title {
+  height: 30px;
+  margin: 20px 0;
   -webkit-animation-delay: 0;
           animation-delay: 0;
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
+  position: relative;
 }
-.carte h2::before {
-  content: "";
+.section-title > h2 {
+  font: 300 1rem "Roboto";
+  text-transform: uppercase;
+}
+.section-title .line {
+  background: #99e2d0;
+  height: 3px;
+  width: 45px;
+  border: none;
   position: absolute;
-  bottom: -8px;
   left: 0;
-  border-bottom: 3px solid #99e2d0;
-  width: 40px;
-}
-
-.carte-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-top: 5%;
-}
-.carte-list .list-item {
-  max-width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: stretch;
-  overflow: hidden;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-}
-.carte-list .list-item:nth-child(1) {
-  -webkit-animation-delay: 0.25s;
-          animation-delay: 0.25s;
-}
-.carte-list .list-item:nth-child(2) {
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
-}
-.carte-list .list-item:nth-child(3) {
-  -webkit-animation-delay: 0.75s;
-          animation-delay: 0.75s;
-}
-.carte-list .list-item:nth-child(4) {
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-}
-.carte-list .list-item:nth-child(5) {
-  -webkit-animation-delay: 1.25s;
-          animation-delay: 1.25s;
-}
-.carte-list .list-item:nth-child(6) {
-  -webkit-animation-delay: 1.5s;
-          animation-delay: 1.5s;
-}
-.carte-list .list-item:nth-child(7) {
-  -webkit-animation-delay: 1.75s;
-          animation-delay: 1.75s;
-}
-.carte-list .list-item:nth-child(8) {
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
-}
-.carte-list .list-item:nth-child(9) {
-  -webkit-animation-delay: 2.25s;
-          animation-delay: 2.25s;
-}
-.carte-list .list-item:nth-child(10) {
-  -webkit-animation-delay: 2.5s;
-          animation-delay: 2.5s;
-}
-.carte-list .list-item:nth-child(11) {
-  -webkit-animation-delay: 2.75s;
-          animation-delay: 2.75s;
-}
-.carte-list .list-item:nth-child(12) {
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
-}
-.carte-list .list-item:hover .check {
-  display: flex;
-  opacity: 1;
-}
-.carte-list .list-item .check {
-  width: 70px;
-  height: 70px;
-  background-color: #99e2d0;
-  border-bottom-right-radius: 20px;
-  border-top-right-radius: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  display: none;
-  opacity: 0;
-}
-.carte-list .list-item .check i {
-  color: white;
+  margin: 5px 0 0 0;
 }
 
 @-webkit-keyframes appear {
@@ -684,16 +602,125 @@ article {
     opacity: 1;
   }
 }
+.menu-list {
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.list-item {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  overflow: hidden;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+.list-item:nth-child(1) {
+  -webkit-animation-delay: 0.25s;
+          animation-delay: 0.25s;
+}
+.list-item:nth-child(2) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+.list-item:nth-child(3) {
+  -webkit-animation-delay: 0.75s;
+          animation-delay: 0.75s;
+}
+.list-item:nth-child(4) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+.list-item:nth-child(5) {
+  -webkit-animation-delay: 1.25s;
+          animation-delay: 1.25s;
+}
+.list-item:nth-child(6) {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+.list-item:nth-child(7) {
+  -webkit-animation-delay: 1.75s;
+          animation-delay: 1.75s;
+}
+.list-item:nth-child(8) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+.list-item:nth-child(9) {
+  -webkit-animation-delay: 2.25s;
+          animation-delay: 2.25s;
+}
+.list-item:nth-child(10) {
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+}
+.list-item:nth-child(11) {
+  -webkit-animation-delay: 2.75s;
+          animation-delay: 2.75s;
+}
+.list-item:nth-child(12) {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+.list-item:hover {
+  cursor: pointer;
+}
+.list-item:hover .check {
+  display: flex;
+  flex: 20%;
+  max-width: 60px;
+  transform: translateX(0px);
+}
+.list-item:hover .item-info {
+  flex: 80%;
+}
+.list-item:hover .fa-circle-check {
+  transform: rotate(360deg);
+}
+
+.check {
+  width: 0px;
+  height: 70px;
+  background-color: #99e2d0;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 0;
+  transform: translateX(60px);
+  cursor: pointer;
+  transition: all 500ms ease-in;
+}
+.check .fa-circle-check {
+  color: white;
+  font-size: 25px;
+  transform: rotate(90deg);
+  transition: 500ms ease-in;
+  transition-delay: 150ms;
+}
+
 .item-info {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
   width: 100%;
-  flex-shrink: 1;
+  flex: 100%;
   min-width: 0;
-  max-height: 70px;
   padding: 13px 15px;
+  transition: 500ms ease-in;
 }
 .item-info > div {
   display: flex;
@@ -705,6 +732,7 @@ article {
   text-align: left;
 }
 .item-info p {
+  flex-grow: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -724,8 +752,11 @@ article {
   display: flex;
   flex-direction: center;
   justify-content: center;
+  background-color: #eaeaea;
+  padding-bottom: 15%;
+  padding-top: 2.5%;
 }
-.cta a {
+.cta .button {
   min-width: 40%;
 }
 
@@ -733,33 +764,38 @@ article {
 @media only screen and (min-width: 768px) {
   /*** START OF PAGE - MED DEVICES---*/
   body {
-    max-width: 1600px;
+    max-width: 1800px;
     margin-left: auto;
     margin-right: auto;
   }
-  .logo-header {
-    height: 40px;
+  .header-container {
+    padding: 2.5%;
+    padding-top: 4%;
   }
-  .hero > .container {
+  .header-container .logo-header {
+    width: 25%;
+  }
+  .header-container .fa-arrow-left {
+    font-size: 1.6rem;
+  }
+  .hero-container {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    padding: 10% 5%;
+    padding: 7.5%;
     text-align: left;
     background: #fff;
   }
-  .hero > .container .tagline {
+  .hero-container .tagline {
     flex: 1 1 70%;
   }
-  .hero > .container h1 {
-    margin: 0;
+  .hero-container h1 {
     max-width: 100%;
   }
-  .hero > .container p {
+  .hero-container p {
     margin: 0;
-    margin-top: 2.5%;
   }
-  .hero > .container .button {
+  .hero-container .button {
     flex: none;
     margin-bottom: 0;
     margin-left: 5%;
@@ -770,20 +806,20 @@ article {
     background: radial-gradient(#ff79da, #9356dc);
   }
   .howto h1 {
-    margin-bottom: 2.5%;
+    margin-bottom: 5%;
     color: white;
   }
   .howto p {
     line-height: 1.2rem;
   }
-  .howto-list {
+  .howto .howto-list {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     gap: 5%;
   }
-  .howto .list-item {
+  .howto .howto-item {
     flex: 1 1 33%;
     max-width: 32%;
     display: flex;
@@ -792,17 +828,19 @@ article {
     align-items: center;
     text-align: center;
     position: relative;
-    padding-top: 5%;
-    padding-bottom: 2.5%;
+    padding: 3.5% 2.5%;
     margin-bottom: 0;
   }
-  .howto .list-item .fa-solid {
-    font-size: 1.5rem;
+  .howto .howto-item .fa-solid {
+    font-size: 1.8rem;
+    color: #353535;
+    margin-bottom: 5%;
   }
-  .howto .list-item p {
+  .howto .howto-item p {
     font-size: 1rem;
+    color: #6023a9;
   }
-  .howto-list > .list-item::before {
+  .howto-item::before {
     width: 30px;
     height: 30px;
     position: absolute;
@@ -818,115 +856,135 @@ article {
     max-height: -moz-min-content;
     max-height: min-content;
   }
+  #restaurants .restaurants-title {
+    margin-bottom: 5%;
+  }
   #restaurants .cards {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 2.5%;
     flex-wrap: wrap;
+    gap: 30px;
   }
-  #restaurants .card {
+  #restaurants .r-card {
     flex: 1 1 48%;
     max-width: 48.5%;
     margin: 0;
-    margin-bottom: 2.5%;
   }
   footer {
     padding: 5%;
   }
-  footer img {
-    width: 20%;
-    margin-bottom: 2.5%;
+  footer .footer-logo {
+    width: 15%;
+    margin-bottom: 1.5%;
+  }
+  footer ul.footer-list {
+    line-height: 1.5rem;
   }
   /* for restaurant menu pages */
-  header .fa-arrow-left {
-    font-size: 2.25rem;
-    position: relative;
-    margin-top: 2.5%;
-  }
-  .menu img {
-    height: 500px;
+  .menu-header .header-photo img {
+    height: 400px;
+    margin-bottom: -84px;
+    -o-object-position: 50% 70%;
+       object-position: 50% 70%;
   }
   .menu-title {
-    padding-bottom: 0;
+    padding: 0 5%;
+    height: 80px;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.75);
+    justify-content: flex-start;
   }
-  .carte {
+  .menu-title h1 {
+    font-size: 1.7rem;
+    margin: 0;
+    margin-right: 5%;
+  }
+  .menu {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1%;
-    padding: 2.5% 5%;
+    gap: 2.5%;
+    padding: 5%;
+    padding-bottom: 2.5%;
     max-width: 100%;
   }
-  .carte section {
-    flex: 1 0 33%;
-    max-width: 32.5%;
+  .menu .menu-section {
+    flex: 1 0 31%;
+    min-width: 29%;
     margin: 0;
   }
-  .carte .carte-liste {
+  .menu .menu-liste {
     margin-top: 5%;
   }
   .cta {
-    background-color: #eaeaea;
     padding: 5%;
   }
   .cta .button {
-    max-width: 40%;
+    min-width: 100px;
+    width: 25%;
   }
 }
-/* larger devices, ie: desktop size */
+/* larger screens, ie: desktops */
 @media only screen and (min-width: 992px) {
+  /*** START OF PAGE - LG DEVICES---*/
   html {
     font-size: 18px;
   }
-  .header-container {
-    padding: 2.5%;
-    padding-top: 4%;
+  .r-card {
+    height: 308px;
   }
-  .hero > .container {
-    padding: 7.5%;
-  }
-  .howto .list-item {
-    padding: 5% 1% 2.5%;
-  }
-  .howto .list-item .fa-solid {
-    font-size: 1.75rem;
-    color: #353535;
-    margin-bottom: 2.5%;
-  }
-  .howto p {
-    color: #6023a9;
-    font-size: 1.2rem;
-  }
-  .howto-list > .list-item::before {
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    top: -20px;
-    line-height: 40px;
-    font-size: 1.2rem;
-  }
-  .card {
-    height: 300px;
-  }
-  .resto__photo {
+  .r-card .r-photo {
     height: 220px;
   }
-  .floating {
-    bottom: 24px;
+  .r-card .r-footer {
+    padding: 20px;
   }
-  footer {
-    padding: 2.5%;
+  .r-card .floating {
+    bottom: 28px;
   }
-  footer img {
-    width: 15%;
-    margin-bottom: 1%;
+  .list-item {
+    height: 90px;
   }
-  footer ul.footer__list {
-    line-height: 1.6em;
-    font-weight: 400;
+  .list-item:hover .check {
+    flex: 25%;
+    max-width: 80px;
+  }
+  .check {
+    height: 90px;
+    transform: translateX(80px);
+  }
+  .check .fa-circle-check {
+    font-size: 30px;
+  }
+  .item-info {
+    padding: 25px 20px;
+  }
+  .footer-logo {
+    width: 10%;
+  }
+}
+/* xl screens */
+@media only screen and (min-width: 1440px) {
+  /*** START OF PAGE - xL DEVICES---*/
+  html {
+    font-size: 24px;
+  }
+  .hero-container p {
+    max-width: 500px;
+  }
+  .r-card {
+    height: 466px;
+  }
+  .r-card .r-photo {
+    height: 350px;
+  }
+  .r-card .r-footer {
+    padding: 25px;
+  }
+  .r-card .floating {
+    bottom: 42px;
   }
 }

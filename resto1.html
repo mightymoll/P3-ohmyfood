@@ -5,10 +5,11 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" initial scale="1.0" />
 		<!-- link to CSS stylesheet -->
-		<link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css"/>
+		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/style.css" />
 		<!-- site title-->
-		<title>resto1</title> <!-- placeholder-->
+		<title>resto1</title>
+		<!-- placeholder-->
 	</head>
 
 	<body>
@@ -17,14 +18,14 @@
 				<nav>
 					<a class="nav-home" href="https://mightymoll.github.io/ohmyfood/"><i class="fa-solid fa-arrow-left"></i></a>
 				</nav>
-				<img class="logo-header" src="assets/images/ohmyfood.svg" alt="ohmyfood logo"/>
+				<img class="logo-header" src="assets/images/ohmyfood.svg" alt="ohmyfood logo" />
 			</div>
 		</header>
 
-    <main>
-			<section class="menu header">
-				<div class="menu-photo"> 
-					<img src="./assets/images/restaurants/ALaFrancaise.jpg"/>
+		<main>
+			<section class="menu-header">
+				<div class="header-photo">
+					<img src="./assets/images/restaurants/ALaFrancaise.jpg" />
 				</div>
 				<div class="menu-title">
 					<h1>À la française</h1>
@@ -38,11 +39,13 @@
 					</div>
 				</div>
 			</section>
-
-			<article class="carte">
-				<section class="entrees">
-					<h2>Entrées</h2>
-					<div class="carte-list">
+			<article class="menu">
+				<section class="menu-section entrees">
+					<div class="section-title">
+						<h2>Entrées</h2>
+						<hr class="line" />
+					</div>
+					<div class="menu-list">
 						<div class="list-item e1">
 							<div class="item-info">
 								<div>
@@ -67,7 +70,6 @@
 								<i class="fa-solid fa-circle-check"></i>
 							</div>
 						</div>
-						
 						<div class="list-item e3">
 							<div class="item-info">
 								<div>
@@ -82,9 +84,12 @@
 						</div>
 					</div>
 				</section>
-				<section class="plats">
-					<h2>Plats</h2>
-					<div class="carte-list">
+				<section class="menu-section plats">
+					<div class="section-title">
+						<h2>Plats</h2>
+						<hr class="line" />
+					</div>
+					<div class="menu-list">
 						<div class="list-item p1">
 							<div class="item-info">
 								<div>
@@ -123,9 +128,12 @@
 						</div>
 					</div>
 				</section>
-				<section class="desserts">
-					<h2>Desserts</h2>
-					<div class="carte-list">
+				<section class="menu-section desserts">
+					<div class="section-title">
+						<h2>Desserts</h2>
+						<hr class="line" />
+					</div>
+					<div class="menu-list">
 						<div class="list-item d1">
 							<div class="item-info">
 								<div>
@@ -168,25 +176,24 @@
 			<section class="cta">
 				<a class="button" href="#;">Commander</a>
 			</section>
-    </main>
-
-    <footer>
-      <img class="footer-logo" src="assets/images/ohmyfood.svg" alt="ohmyfood logo">
-      <ul class="footer__list">
-        <li class="link">
-          <a href="#"><i class="fa-solid fa-utensils"></i>Proposer un restaurant</i></a>
-        </li>
-        <li class="link">
-          <a href="#"><i class="fa-solid fa-handshake-angle"></i>Devenir partenaire</i></a>
-        </li>
-        <li class="link">
-          <a href="#">Mentions légales</a>
-        </li>
-        <li class="link contact">
-          <a href="mailto:contact@ohmyfood.fr">Contact</a>
-        </li>
-      </ul>
-    </footer>
+		</main>
+		<footer>
+			<img class="footer-logo" src="assets/images/ohmyfood.svg" alt="ohmyfood logo" />
+			<ul class="footer-list">
+				<li class="link">
+					<a href="#"><i class="fa-solid fa-utensils"></i>Proposer un restaurant</a>
+				</li>
+				<li class="link">
+					<a href="#"><i class="fa-solid fa-handshake-angle"></i>Devenir partenaire</a>
+				</li>
+				<li class="link">
+					<a href="#">Mentions légales</a>
+				</li>
+				<li class="link contact">
+					<a href="mailto:contact@ohmyfood.fr">Contact</a>
+				</li>
+			</ul>
+		</footer>
 		<script src="https://kit.fontawesome.com/cd93d31cbd.js" crossorigin="anonymous"></script>
 	</body>
 </html>

@@ -15,7 +15,6 @@ $heart-dim: 32px;
 }
 
 %btnstyle {
-	height: 40px;
 	background: $color-gradient;
 	padding: 0.5em 1.5em;
 	border-radius: 40px;
@@ -29,7 +28,6 @@ $heart-dim: 32px;
 	height: 70px;
 	border-radius: 20px;
 	box-shadow: $soft;
-	flex: 0;
 }
 
 %appear {
@@ -44,7 +42,7 @@ $heart-dim: 32px;
 	height: 225px;
 	background: $color-base;
 	border-radius: $corner-rad;
-	margin: $half 0;
+	margin: 0;
 	box-shadow: $soft;
 }
 
