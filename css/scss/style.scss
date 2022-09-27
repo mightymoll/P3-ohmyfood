@@ -1,5 +1,5 @@
 /* VENDOR - Default fall-backs and external files */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap");
 
 /* SCSS Files */
 
@@ -7,13 +7,16 @@
 @import "components";
 @import "base";
 
+html {
+	font-size: 16px;
+	font-family: $font-main;
+	font-weight: 500;
+}
+
 body {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	font-size: 16px;
-	font-family: $font-main;
-	font-weight: 500;
 }
 
 a,
@@ -121,7 +124,7 @@ h3 {
 	position: relative;
 	box-shadow: $harsh;
 	padding: $size1x;
-	padding-top: 7.5%;
+	padding-top: $size3-4x;
 
 	.logo-header {
 		width: 40%;
@@ -256,7 +259,7 @@ a.button {
 
 	.cards {
 		flex: 1;
-		@include flexbox(row, flex-end, space-between);
+		@include flexbox(row, flex-end);
 		flex-wrap: wrap;
 	}
 }
@@ -286,7 +289,19 @@ a.button {
 
 	&__photo {
 		width: 100%;
-		height: 180px;
+		height: 150px;
+
+		&.pos1 {
+			object-position: 50% 60%;
+		}
+
+		&.pos2 {
+			object-position: 50% 80%;
+		}
+
+		&.pos3 {
+			object-position: 50% 90%;
+		}
 	}
 
 	img {
@@ -294,16 +309,17 @@ a.button {
 		object-fit: cover;
 		border-top-left-radius: $corner-rad;
 		border-top-right-radius: $corner-rad;
-		object-position: 50% 60%;
 		z-index: 0;
 	}
 
 	&__footer {
 		padding: 15px;
-		max-height: 70px;
 		color: #000;
-		@include flexbox(column, space-between);
 		position: relative;
+
+		h2 {
+			margin-bottom: 4px;
+		}
 	}
 }
 
@@ -312,7 +328,7 @@ a.button {
 		display: block;
 		position: absolute;
 		bottom: calc((70px - $heart-dim) / 2);
-		right: 7.5%;
+		right: $size3-4x;
 	}
 
 	.heart {
@@ -370,7 +386,7 @@ a.button {
 
 footer {
 	background: $base-dark;
-	padding: $size1x $size1x $size2x;
+	padding: $size1x $size1x $size3-4x;
 	margin: 0;
 
 	img {
@@ -482,11 +498,13 @@ article {
 	@include flexbox(column, space-between);
 	margin-top: $size1x;
 
-	.list-item {
+	div.list-item {
 		@extend %listitem;
+	}
+
+	.list-item {
 		@extend %appear;
-		width: 100%;
-		max-width: 100vw;
+		max-width: 100%;
 		@include flexbox(row, space-between, stretch);
 		overflow: hidden;
 		animation-delay: 1s;
@@ -575,7 +593,7 @@ article {
 	}
 }
 
-/* larger devices, ie: tablets; 768px and desktop size */
+/* larger hand-held devices, ie: tablets */
 @media only screen and (min-width: 768px) {
 	/*** START OF PAGE - MED DEVICES---*/
 
@@ -629,28 +647,28 @@ article {
 			line-height: 1.2rem;
 		}
 
-		.howto-list {
+		&-list {
 			@include flexbox(row, space-between, center);
 			gap: $size1x;
 		}
-	}
 
-	.list-item {
-		flex: 1 1 33%;
-		max-width: 32%;
-		@include flexbox(column, space-around, center);
-		text-align: center;
-		position: relative;
-		padding-top: $size1x;
-		padding-bottom: $half;
-		margin-bottom: 0;
+		.list-item {
+			flex: 1 1 33%;
+			max-width: 32%;
+			@include flexbox(column, space-around, center);
+			text-align: center;
+			position: relative;
+			padding-top: $size1x;
+			padding-bottom: $half;
+			margin-bottom: 0;
 
-		.fa-solid {
-			font-size: 1.5rem;
-		}
+			.fa-solid {
+				font-size: 1.5rem;
+			}
 
-		p {
-			font-size: 1rem;
+			p {
+				font-size: 1rem;
+			}
 		}
 	}
 
@@ -666,8 +684,7 @@ article {
 
 	#restaurants {
 		background: $color-base;
-		padding-top: $size2x;
-		padding-bottom: $size1x;
+		padding: $size1x;
 		max-height: min-content;
 
 		.cards {
@@ -686,5 +703,123 @@ article {
 	}
 	footer {
 		padding: $size1x;
+
+		img {
+			width: 20%;
+			margin-bottom: $half;
+		}
+	}
+
+	/* for restaurant menu pages */
+	header {
+		.fa-arrow-left {
+			font-size: 2.25rem;
+			position: relative;
+			margin-top: $half;
+		}
+	}
+
+	.menu {
+		img {
+			height: 500px;
+		}
+
+		&-title {
+			padding-bottom: 0;
+		}
+	}
+
+	.carte {
+		@include flexbox(row, space-between);
+		flex-wrap: wrap;
+		gap: 1%;
+		padding: $half $size1x;
+		max-width: 100%;
+
+		section {
+			flex: 1 0 33%;
+			max-width: 32.5%;
+			margin: 0;
+		}
+
+		.carte-liste {
+			margin-top: $size1x;
+		}
+	}
+
+	.cta {
+		background-color: $base-light;
+		padding: $size1x;
+
+		.button {
+			max-width: 40%;
+		}
+	}
+}
+
+/* larger devices, ie: desktop size */
+@media only screen and (min-width: 992px) {
+	html {
+		font-size: 18px;
+	}
+	.header-container {
+		padding: $half;
+		padding-top: 4%;
+	}
+
+	.hero > .container {
+		padding: $size3-4x;
+	}
+
+	.howto {
+		.list-item {
+			padding: $size1x 1% $half;
+
+			.fa-solid {
+				font-size: 1.75rem;
+				color: $base-dark;
+				margin-bottom: $half;
+			}
+		}
+
+		p {
+			color: darken($color-primary, 20%);
+			font-size: 1.2rem;
+		}
+	}
+
+	.howto-list > .list-item::before {
+		width: 40px;
+		height: 40px;
+		position: absolute;
+		top: -20px;
+		line-height: 40px;
+		font-size: 1.2rem;
+	}
+
+	.card {
+		height: 300px;
+	}
+
+	.resto__photo {
+		height: 220px;
+	}
+
+	.floating {
+		bottom: calc((80px - $heart-dim) / 2);
+	}
+
+	footer {
+		padding: $half;
+
+		img {
+			width: 15%;
+			margin-bottom: 1%;
+		}
+
+		ul.footer__list {
+			line-height: 1.6em;
+			font-weight: 400;
+		}
 	}
 }

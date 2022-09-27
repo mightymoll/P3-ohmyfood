@@ -29,6 +29,7 @@ $heart-dim: 32px;
 	height: 70px;
 	border-radius: 20px;
 	box-shadow: $soft;
+	flex: 0;
 }
 
 %appear {
@@ -40,7 +41,7 @@ $heart-dim: 32px;
 
 %card {
 	width: $full-width;
-	height: 250px;
+	height: 225px;
 	background: $color-base;
 	border-radius: $corner-rad;
 	margin: $half 0;

@@ -1,5 +1,5 @@
 /* VENDOR - Default fall-backs and external files */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap");
 /* SCSS Files */
 /* general styles */ /* colors */
 /* shadows, ombres */
@@ -37,10 +37,11 @@ a.button {
   box-shadow: 2px 3px 10px rgba(30, 29, 29, 0.15);
 }
 
-.carte-list .list-item, .list-item {
+.carte-list div.list-item, .list-item {
   height: 70px;
   border-radius: 20px;
   box-shadow: 2px 3px 10px rgba(30, 29, 29, 0.15);
+  flex: 0;
 }
 
 .carte-list .list-item, .carte h2 {
@@ -56,7 +57,7 @@ a.button {
 
 .card {
   width: 100%;
-  height: 250px;
+  height: 225px;
   background: #fff;
   border-radius: 15px;
   margin: 2.5% 0;
@@ -96,13 +97,16 @@ a.button:hover {
   transition: opacity 1s ease-in-out;
 }
 
+html {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
 body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-size: 16px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
 }
 
 a,
@@ -363,7 +367,6 @@ a.button:hover {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  align-items: space-between;
   flex-wrap: wrap;
 }
 
@@ -392,7 +395,19 @@ a.button:hover {
 }
 .resto__photo {
   width: 100%;
-  height: 180px;
+  height: 150px;
+}
+.resto__photo.pos1 {
+  -o-object-position: 50% 60%;
+     object-position: 50% 60%;
+}
+.resto__photo.pos2 {
+  -o-object-position: 50% 80%;
+     object-position: 50% 80%;
+}
+.resto__photo.pos3 {
+  -o-object-position: 50% 90%;
+     object-position: 50% 90%;
 }
 .resto img {
   max-height: 100%;
@@ -400,18 +415,15 @@ a.button:hover {
      object-fit: cover;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  -o-object-position: 50% 60%;
-     object-position: 50% 60%;
   z-index: 0;
 }
 .resto__footer {
   padding: 15px;
-  max-height: 70px;
   color: #000;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   position: relative;
+}
+.resto__footer h2 {
+  margin-bottom: 4px;
 }
 
 .like-btn .floating {
@@ -466,7 +478,7 @@ a.button:hover {
 
 footer {
   background: #353535;
-  padding: 5% 5% 10%;
+  padding: 5% 5% 7.5%;
   margin: 0;
 }
 footer img {
@@ -575,8 +587,7 @@ article {
   margin-top: 5%;
 }
 .carte-list .list-item {
-  width: 100%;
-  max-width: 100vw;
+  max-width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -718,7 +729,7 @@ article {
   min-width: 40%;
 }
 
-/* larger devices, ie: tablets; 768px and desktop size */
+/* larger hand-held devices, ie: tablets */
 @media only screen and (min-width: 768px) {
   /*** START OF PAGE - MED DEVICES---*/
   body {
@@ -765,14 +776,14 @@ article {
   .howto p {
     line-height: 1.2rem;
   }
-  .howto .howto-list {
+  .howto-list {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     gap: 5%;
   }
-  .list-item {
+  .howto .list-item {
     flex: 1 1 33%;
     max-width: 32%;
     display: flex;
@@ -785,10 +796,10 @@ article {
     padding-bottom: 2.5%;
     margin-bottom: 0;
   }
-  .list-item .fa-solid {
+  .howto .list-item .fa-solid {
     font-size: 1.5rem;
   }
-  .list-item p {
+  .howto .list-item p {
     font-size: 1rem;
   }
   .howto-list > .list-item::before {
@@ -802,8 +813,7 @@ article {
   }
   #restaurants {
     background: #fff;
-    padding-top: 10%;
-    padding-bottom: 5%;
+    padding: 5%;
     max-height: -webkit-min-content;
     max-height: -moz-min-content;
     max-height: min-content;
@@ -825,5 +835,98 @@ article {
   }
   footer {
     padding: 5%;
+  }
+  footer img {
+    width: 20%;
+    margin-bottom: 2.5%;
+  }
+  /* for restaurant menu pages */
+  header .fa-arrow-left {
+    font-size: 2.25rem;
+    position: relative;
+    margin-top: 2.5%;
+  }
+  .menu img {
+    height: 500px;
+  }
+  .menu-title {
+    padding-bottom: 0;
+  }
+  .carte {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1%;
+    padding: 2.5% 5%;
+    max-width: 100%;
+  }
+  .carte section {
+    flex: 1 0 33%;
+    max-width: 32.5%;
+    margin: 0;
+  }
+  .carte .carte-liste {
+    margin-top: 5%;
+  }
+  .cta {
+    background-color: #eaeaea;
+    padding: 5%;
+  }
+  .cta .button {
+    max-width: 40%;
+  }
+}
+/* larger devices, ie: desktop size */
+@media only screen and (min-width: 992px) {
+  html {
+    font-size: 18px;
+  }
+  .header-container {
+    padding: 2.5%;
+    padding-top: 4%;
+  }
+  .hero > .container {
+    padding: 7.5%;
+  }
+  .howto .list-item {
+    padding: 5% 1% 2.5%;
+  }
+  .howto .list-item .fa-solid {
+    font-size: 1.75rem;
+    color: #353535;
+    margin-bottom: 2.5%;
+  }
+  .howto p {
+    color: #6023a9;
+    font-size: 1.2rem;
+  }
+  .howto-list > .list-item::before {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: -20px;
+    line-height: 40px;
+    font-size: 1.2rem;
+  }
+  .card {
+    height: 300px;
+  }
+  .resto__photo {
+    height: 220px;
+  }
+  .floating {
+    bottom: 24px;
+  }
+  footer {
+    padding: 2.5%;
+  }
+  footer img {
+    width: 15%;
+    margin-bottom: 1%;
+  }
+  footer ul.footer__list {
+    line-height: 1.6em;
+    font-weight: 400;
   }
 }
