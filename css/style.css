@@ -219,6 +219,7 @@ h3 {
 }
 #loading-screen .load-items .logo-loading {
   filter: invert(100%);
+  width: 200px;
 }
 
 /* start of page content */
@@ -235,7 +236,7 @@ h3 {
   padding-top: 7.5%;
 }
 .header-container .logo-header {
-  width: 40%;
+  width: 35%;
 }
 .header-container .nav-home {
   font-size: 1.5rem;
@@ -481,7 +482,7 @@ footer {
 }
 footer .footer-logo {
   filter: invert(100%);
-  width: 35%;
+  width: 30%;
   margin-bottom: 2.5%;
 }
 footer ul.footer-list {
@@ -546,7 +547,8 @@ footer ul.footer-list a:active {
   align-items: center;
 }
 .menu-title h1 {
-  font: 1.75rem "Shrikhand";
+  font: 1.7rem "Shrikhand";
+  font-kerning: none;
 }
 
 .menu {
@@ -773,7 +775,7 @@ footer ul.footer-list a:active {
     padding-top: 4%;
   }
   .header-container .logo-header {
-    width: 25%;
+    width: 20%;
   }
   .header-container .fa-arrow-left {
     font-size: 1.6rem;
@@ -877,7 +879,7 @@ footer ul.footer-list a:active {
     padding: 5%;
   }
   footer .footer-logo {
-    width: 15%;
+    width: 10%;
     margin-bottom: 1.5%;
   }
   footer ul.footer-list {
@@ -963,7 +965,7 @@ footer ul.footer-list a:active {
     padding: 25px 20px;
   }
   .footer-logo {
-    width: 10%;
+    width: 5%;
   }
 }
 /* xl screens */
