@@ -527,7 +527,7 @@ footer {
   @extend %appear;
   width: 100%;
   margin: 0;
-  background: $color-base;
+  background: #fff;
   @include flexbox(row, space-between, stretch);
   overflow: hidden;
   transition-timing-function: cubic-bezier(0.55, 0, 0.45, 1);
