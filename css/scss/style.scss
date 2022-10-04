@@ -248,7 +248,7 @@ a.button {
   height: 24px;
   display: inline-flex;
   justify-content: center;
-  color: white;
+  color: #fff;
   font: map-get($textstyle, "listnum");
   line-height: 24px;
   background: $color-primary;
@@ -397,7 +397,7 @@ footer {
 
   .footer-logo {
     filter: invert(100%);
-    width: 100px;
+    width: 30%;
     margin-bottom: $half;
   }
 

@@ -66,7 +66,7 @@ a.button {
   height: 70px;
   border-radius: 20px;
   box-shadow: 2px 3px 10px rgba(30, 29, 29, 0.15);
-  background: #fff;
+  background-color: #fff;
 }
 
 .r-card {
@@ -375,7 +375,7 @@ a.button:hover {
   height: 24px;
   display: inline-flex;
   justify-content: center;
-  color: white;
+  color: #fff;
   font: 700 0.875rem "Roboto";
   line-height: 24px;
   background: #9356dc;
@@ -511,7 +511,7 @@ footer {
 }
 footer .footer-logo {
   filter: invert(100%);
-  width: 100px;
+  width: 30%;
   margin-bottom: 2.5%;
 }
 footer ul.footer-list {
