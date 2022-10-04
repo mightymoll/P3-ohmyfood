@@ -1,61 +1,47 @@
 @import "base";
 
-$heart-dim: 32px;
-
 /* general icon styling for proper display */
-%icon {
-	font-family: "Font Awesome 6 Free";
-	font-weight: 900;
-	display: inline-block;
-	font-style: normal;
 
-	font-variant: normal;
-	text-rendering: auto;
-	-webkit-font-smoothing: antialiased;
+%icon {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  display: inline-block;
+  font-style: normal;
+
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
 }
 
 %btnstyle {
-	background: $color-gradient;
-	padding: 0.5em 1.5em;
-	border-radius: 40px;
-	font: map-get($textstyle, "button");
-	line-height: 40px;
-	text-align: center;
-	box-shadow: $soft;
+  background: $color-gradient;
+  padding: 0.5em 1.5em;
+  border-radius: 40px;
+  font: map-get($textstyle, "button");
+  line-height: 40px;
+  text-align: center;
+  box-shadow: $soft;
 }
 
 %listitem {
-	height: 70px;
-	border-radius: 20px;
-	box-shadow: $soft;
-}
-
-%appear {
-	animation-name: appear;
-	animation-duration: 1s;
-	animation-fill-mode: both;
-	animation-timing-function: ease-in;
+  height: 70px;
+  border-radius: 20px;
+  box-shadow: $soft;
 }
 
 %card {
-	width: $full-width;
-	height: 225px;
-	background: $color-base;
-	border-radius: $corner-rad;
-	margin: 0;
-	box-shadow: $soft;
+  width: $full-width;
+  height: 225px;
+  background: $color-base;
+  border-radius: $corner-rad;
+  margin: 0;
+  box-shadow: $soft;
 }
+
+$heart-dim: 32px;
 
 /* positioning for 'like' button */
 %heart-pos {
-	width: $heart-dim;
-	height: $heart-dim;
-}
-
-%rotate {
-	animation-name: spin;
-	animation-delay: 0.5s;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: linear;
+  width: $heart-dim;
+  height: $heart-dim;
 }
