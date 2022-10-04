@@ -11,6 +11,7 @@ html {
   font-size: 16px;
   font-family: $font-main;
   font-weight: 500;
+  width: 100%;
 }
 
 body {
@@ -34,7 +35,7 @@ a {
 
 h1 {
   font: map-get($textstyle, "h1");
-  margin-bottom: $half;
+  margin-bottom: $size1x;
 }
 
 h2 {
@@ -64,6 +65,7 @@ h3 {
     0% {
       opacity: 1;
     }
+
     100% {
       opacity: 0;
       visibility: hidden;
@@ -95,6 +97,7 @@ h3 {
       from {
         transform: rotate(0deg);
       }
+
       to {
         transform: rotate(360deg);
       }
@@ -265,6 +268,7 @@ a.button {
 }
 
 .r-card {
+  flex: none;
   @extend %card;
   position: relative;
 
@@ -393,7 +397,7 @@ footer {
 
   .footer-logo {
     filter: invert(100%);
-    width: 30%;
+    width: 100px;
     margin-bottom: $half;
   }
 
@@ -476,15 +480,26 @@ footer {
   margin-bottom: $size2x;
 }
 
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translatex(200px);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .section-title {
   height: 30px;
   margin: $gap 0;
   @extend %appear;
   animation-delay: 0;
-  animation-duration: 1s;
+  animation-duration: 1.5s;
   position: relative;
 
-  > h2 {
+  >h2 {
     font: map-get($textstyle, "h2-menu");
     text-transform: uppercase;
   }
@@ -497,16 +512,6 @@ footer {
     position: absolute;
     left: 0;
     margin: 5px 0 0 0;
-  }
-}
-
-@keyframes appear {
-  0% {
-    opacity: 0;
-    transform: translatex(100px);
-  }
-  100% {
-    opacity: 1;
   }
 }
 
@@ -525,24 +530,28 @@ footer {
   background: $color-base;
   @include flexbox(row, space-between, stretch);
   overflow: hidden;
-  animation-delay: 1s;
+  transition-timing-function: cubic-bezier(0.55, 0, 0.45, 1);
+
   @for $i from 1 through 12 {
     &:nth-child(#{$i}) {
-      animation-delay: $i * 0.25s;
+      animation-delay: $i * 0.35s;
     }
   }
 
   &:hover {
     cursor: pointer;
+
     .check {
       display: flex;
       flex: 20%;
       max-width: 60px;
       transform: translateX(0px);
     }
+
     .item-info {
       flex: 80%;
     }
+
     .fa-circle-check {
       transform: rotate(360deg);
     }
@@ -579,7 +588,7 @@ footer {
   padding: 13px 15px;
   transition: 500ms ease-in;
 
-  > div {
+  >div {
     @include flexbox(column, space-between);
     height: 100%;
     margin-right: $size1x;
@@ -621,6 +630,7 @@ footer {
 
 /* larger hand-held devices, ie: tablets */
 @media only screen and (min-width: 768px) {
+
   /*** START OF PAGE - MED DEVICES---*/
   body {
     max-width: 1800px;
@@ -635,6 +645,7 @@ footer {
     .logo-header {
       width: 20%;
     }
+
     .fa-arrow-left {
       font-size: 1.6rem;
     }
@@ -653,6 +664,7 @@ footer {
     h1 {
       max-width: 100%;
     }
+
     p {
       margin: 0;
     }
@@ -742,7 +754,7 @@ footer {
     padding: $size1x;
 
     .footer-logo {
-      width: 10%;
+      width: 105px;
       margin-bottom: 1.5%;
     }
 
@@ -789,7 +801,7 @@ footer {
       margin: 0;
     }
 
-    .menu-liste {
+    .menu-list {
       margin-top: $size1x;
     }
   }
@@ -803,6 +815,7 @@ footer {
     }
   }
 }
+
 /* larger screens, ie: desktops */
 @media only screen and (min-width: 992px) {
   /*** START OF PAGE - LG DEVICES---*/
@@ -828,7 +841,7 @@ footer {
   }
 
   .list-item {
-    height: 90px;
+    height: 100px;
 
     &:hover {
       .check {
@@ -839,7 +852,7 @@ footer {
   }
 
   .check {
-    height: 90px;
+    height: 100px;
     transform: translateX(80px);
 
     .fa-circle-check {
@@ -851,13 +864,14 @@ footer {
     padding: 25px 20px;
   }
 
-  .footer-logo {
-    width: 5%;
+  img.footer-logo {
+    width: 115px;
   }
 }
 
 /* xl screens */
 @media only screen and (min-width: 1440px) {
+
   /*** START OF PAGE - xL DEVICES---*/
   html {
     font-size: 24px;
@@ -883,5 +897,9 @@ footer {
     .floating {
       bottom: calc((116px - $heart-dim) / 2);
     }
+  }
+
+  img.footer-logo {
+    width: 180px;
   }
 }

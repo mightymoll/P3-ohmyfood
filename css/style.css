@@ -1,7 +1,9 @@
 /* VENDOR - Default fall-backs and external files */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap");
 /* SCSS Files */
-/* general styles */ /* colors */
+/* general styles */
+/* margins and padding */
+/* colors */
 /* shadows, ombres */
 /* fonts */
 /* transitions */
@@ -13,6 +15,30 @@ a.button {
 a.button:hover {
   opacity: 1;
   transition: opacity 1s ease-in-out;
+}
+
+#loading-screen .load-items .anticlockwise, #loading-screen .load-items .clockwise, #loading-screen .load-items .spinner img {
+  -webkit-animation-name: spin;
+          animation-name: spin;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+.list-item, .section-title {
+  -webkit-animation-name: appear;
+          animation-name: appear;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-timing-function: cubic-bezier(0.55, 0, 0.25, 1);
+          animation-timing-function: cubic-bezier(0.55, 0, 0.25, 1);
 }
 
 /* general icon styling for proper display */
@@ -40,17 +66,7 @@ a.button {
   height: 70px;
   border-radius: 20px;
   box-shadow: 2px 3px 10px rgba(30, 29, 29, 0.15);
-}
-
-.list-item, .section-title {
-  -webkit-animation-name: appear;
-          animation-name: appear;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
+  background: #fff;
 }
 
 .r-card {
@@ -68,19 +84,6 @@ a.button {
   height: 32px;
 }
 
-#loading-screen .load-items .anticlockwise, #loading-screen .load-items .clockwise, #loading-screen .load-items .spinner img {
-  -webkit-animation-name: spin;
-          animation-name: spin;
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-}
-
 /* colors */
 /* shadows, ombres */
 /* fonts */
@@ -95,10 +98,35 @@ a.button:hover {
   transition: opacity 1s ease-in-out;
 }
 
+#loading-screen .load-items .anticlockwise, #loading-screen .load-items .clockwise, #loading-screen .load-items .spinner img {
+  -webkit-animation-name: spin;
+          animation-name: spin;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+.list-item, .section-title {
+  -webkit-animation-name: appear;
+          animation-name: appear;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-timing-function: cubic-bezier(0.55, 0, 0.25, 1);
+          animation-timing-function: cubic-bezier(0.55, 0, 0.25, 1);
+}
+
 html {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
+  width: 100%;
 }
 
 body {
@@ -122,7 +150,7 @@ a {
 
 h1 {
   font: 700 1.5rem "Roboto";
-  margin-bottom: 2.5%;
+  margin-bottom: 5%;
 }
 
 h2 {
@@ -368,6 +396,7 @@ a.button:hover {
 }
 
 .r-card {
+  flex: none;
   position: relative;
 }
 .r-card:hover {
@@ -482,7 +511,7 @@ footer {
 }
 footer .footer-logo {
   filter: invert(100%);
-  width: 30%;
+  width: 100px;
   margin-bottom: 2.5%;
 }
 footer ul.footer-list {
@@ -562,13 +591,32 @@ footer ul.footer-list a:active {
   margin-bottom: 10%;
 }
 
+@-webkit-keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translatex(200px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translatex(200px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .section-title {
   height: 30px;
   margin: 20px 0;
   -webkit-animation-delay: 0;
           animation-delay: 0;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
   position: relative;
 }
 .section-title > h2 {
@@ -585,25 +633,6 @@ footer ul.footer-list a:active {
   margin: 5px 0 0 0;
 }
 
-@-webkit-keyframes appear {
-  0% {
-    opacity: 0;
-    transform: translatex(100px);
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes appear {
-  0% {
-    opacity: 0;
-    transform: translatex(100px);
-  }
-  100% {
-    opacity: 1;
-  }
-}
 .menu-list {
   height: -webkit-min-content;
   height: -moz-min-content;
@@ -618,61 +647,61 @@ footer ul.footer-list a:active {
 .list-item {
   width: 100%;
   margin: 0;
+  background: #fff;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: stretch;
   overflow: hidden;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
+  transition-timing-function: cubic-bezier(0.55, 0, 0.45, 1);
 }
 .list-item:nth-child(1) {
-  -webkit-animation-delay: 0.25s;
-          animation-delay: 0.25s;
+  -webkit-animation-delay: 0.35s;
+          animation-delay: 0.35s;
 }
 .list-item:nth-child(2) {
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
 }
 .list-item:nth-child(3) {
-  -webkit-animation-delay: 0.75s;
-          animation-delay: 0.75s;
+  -webkit-animation-delay: 1.05s;
+          animation-delay: 1.05s;
 }
 .list-item:nth-child(4) {
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
+  -webkit-animation-delay: 1.4s;
+          animation-delay: 1.4s;
 }
 .list-item:nth-child(5) {
-  -webkit-animation-delay: 1.25s;
-          animation-delay: 1.25s;
-}
-.list-item:nth-child(6) {
-  -webkit-animation-delay: 1.5s;
-          animation-delay: 1.5s;
-}
-.list-item:nth-child(7) {
   -webkit-animation-delay: 1.75s;
           animation-delay: 1.75s;
 }
+.list-item:nth-child(6) {
+  -webkit-animation-delay: 2.1s;
+          animation-delay: 2.1s;
+}
+.list-item:nth-child(7) {
+  -webkit-animation-delay: 2.45s;
+          animation-delay: 2.45s;
+}
 .list-item:nth-child(8) {
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
+  -webkit-animation-delay: 2.8s;
+          animation-delay: 2.8s;
 }
 .list-item:nth-child(9) {
-  -webkit-animation-delay: 2.25s;
-          animation-delay: 2.25s;
+  -webkit-animation-delay: 3.15s;
+          animation-delay: 3.15s;
 }
 .list-item:nth-child(10) {
-  -webkit-animation-delay: 2.5s;
-          animation-delay: 2.5s;
+  -webkit-animation-delay: 3.5s;
+          animation-delay: 3.5s;
 }
 .list-item:nth-child(11) {
-  -webkit-animation-delay: 2.75s;
-          animation-delay: 2.75s;
+  -webkit-animation-delay: 3.85s;
+          animation-delay: 3.85s;
 }
 .list-item:nth-child(12) {
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
+  -webkit-animation-delay: 4.2s;
+          animation-delay: 4.2s;
 }
 .list-item:hover {
   cursor: pointer;
@@ -879,7 +908,7 @@ footer ul.footer-list a:active {
     padding: 5%;
   }
   footer .footer-logo {
-    width: 10%;
+    width: 105px;
     margin-bottom: 1.5%;
   }
   footer ul.footer-list {
@@ -918,7 +947,7 @@ footer ul.footer-list a:active {
     min-width: 29%;
     margin: 0;
   }
-  .menu .menu-liste {
+  .menu .menu-list {
     margin-top: 5%;
   }
   .cta {
@@ -948,14 +977,14 @@ footer ul.footer-list a:active {
     bottom: 28px;
   }
   .list-item {
-    height: 90px;
+    height: 100px;
   }
   .list-item:hover .check {
     flex: 25%;
     max-width: 80px;
   }
   .check {
-    height: 90px;
+    height: 100px;
     transform: translateX(80px);
   }
   .check .fa-circle-check {
@@ -964,8 +993,8 @@ footer ul.footer-list a:active {
   .item-info {
     padding: 25px 20px;
   }
-  .footer-logo {
-    width: 5%;
+  img.footer-logo {
+    width: 115px;
   }
 }
 /* xl screens */
@@ -988,5 +1017,8 @@ footer ul.footer-list a:active {
   }
   .r-card .floating {
     bottom: 42px;
+  }
+  img.footer-logo {
+    width: 180px;
   }
 }

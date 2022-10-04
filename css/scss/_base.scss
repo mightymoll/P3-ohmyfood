@@ -57,7 +57,7 @@ $textstyle: (
 
 %appear {
   animation-name: appear;
-  animation-duration: 1s;
+  animation-duration: 2s;
   animation-fill-mode: both;
-  animation-timing-function: ease-in;
+  animation-timing-function: cubic-bezier(0.55, 0, 0.25, 1)
 }
