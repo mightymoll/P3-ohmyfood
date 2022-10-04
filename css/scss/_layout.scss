@@ -1,5 +1,6 @@
 /* general styles */
 
+/* margins and padding */
 $full-width: 100%;
 $padding-side: 0 5%;
 $size1x: 5%;
@@ -12,26 +13,32 @@ $gap-big: 30px;
 $corner-rad: 15px;
 
 %centered {
-	padding: $padding-side;
-	margin-left: auto;
-	margin-right: auto;
+  padding: $padding-side;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-@mixin flexbox($flex-direction: false, $justify-content: false, $align-items: false, $gap: false, $flex: false) {
-	display: flex;
+@mixin flexbox(
+  $flex-direction: false,
+  $justify-content: false,
+  $align-items: false,
+  $gap: false,
+  $flex: false
+) {
+  display: flex;
 
-	@if $flex-direction != false {
-		flex-direction: $flex-direction;
-	}
+  @if $flex-direction != false {
+    flex-direction: $flex-direction;
+  }
 
-	@if $justify-content != false {
-		justify-content: $justify-content;
-	}
+  @if $justify-content != false {
+    justify-content: $justify-content;
+  }
 
-	@if $align-items != false {
-		align-items: $align-items;
-	}
-	@if $gap != false {
-		gap: $gap;
-	}
+  @if $align-items != false {
+    align-items: $align-items;
+  }
+  @if $gap != false {
+    gap: $gap;
+  }
 }

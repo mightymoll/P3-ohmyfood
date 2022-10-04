@@ -23,26 +23,41 @@ $font-main: "Roboto", sans-serif;
 $font-accent: "Shrikhand", cursive;
 
 $textstyle: (
-	h1: 700 1.5rem "Roboto",
-	h1-menu: 1.7rem "Shrikhand",
-	h2: 700 1.125rem "Roboto",
-	h2-menu: 300 1rem "Roboto",
-	h3: 300 1.0625rem "Roboto",
-	tagline: 300 1rem "Roboto",
-	button: 500 1rem "Roboto",
-	listnum: 700 0.875rem "Roboto",
-	phototag: 500 0.875rem "Roboto",
-	menu-name: 500 1.125rem "Roboto",
-	menu-desc: 300 0.9375rem "Roboto",
+  h1: 700 1.5rem "Roboto",
+  h1-menu: 1.7rem "Shrikhand",
+  h2: 700 1.125rem "Roboto",
+  h2-menu: 300 1rem "Roboto",
+  h3: 300 1.0625rem "Roboto",
+  tagline: 300 1rem "Roboto",
+  button: 500 1rem "Roboto",
+  listnum: 700 0.875rem "Roboto",
+  phototag: 500 0.875rem "Roboto",
+  menu-name: 500 1.125rem "Roboto",
+  menu-desc: 300 0.9375rem "Roboto",
 );
 
 /* transitions */
 %transition-out {
-	opacity: 1;
-	transition: opacity 0.5s ease-out;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
 }
 
 %transition-in {
-	opacity: 1;
-	transition: opacity 1s ease-in-out;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+%rotate {
+  animation-name: spin;
+  animation-delay: 0.5s;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+
+%appear {
+  animation-name: appear;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in;
 }
