@@ -644,7 +644,7 @@ footer ul.footer-list a:active {
 .list-item {
   width: 100%;
   margin: 0;
-  color: #fff;
+  background: #fff;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
