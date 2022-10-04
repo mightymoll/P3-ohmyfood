@@ -66,7 +66,7 @@ a.button {
   height: 70px;
   border-radius: 20px;
   box-shadow: 2px 3px 10px rgba(30, 29, 29, 0.15);
-  background-color: #fff;
+  background: #fff;
 }
 
 .r-card {
