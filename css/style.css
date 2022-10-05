@@ -498,10 +498,11 @@ a.button:hover {
   font-size: 32px;
   line-height: 32px;
 }
-.like-btn a:focus .fas {
+.like-btn a:focus .fas,
+.like-btn a:visited .fas {
   opacity: 1;
   font-size: 30px;
-  line-height: 30px;
+  outline-color: 1px solid #fff;
 }
 .like-btn a:hover .far,
 .like-btn a:focus .far {
