@@ -403,6 +403,9 @@ a.button:hover {
   transform: scale(102%);
   box-shadow: 2px 3px 10px rgba(30, 29, 29, 0.5);
 }
+.r-card:active {
+  transform: scale(100%);
+}
 
 .r-card_content {
   height: 100%;
@@ -497,6 +500,8 @@ a.button:hover {
 }
 .like-btn a:focus .fas {
   opacity: 1;
+  font-size: 30px;
+  line-height: 30px;
 }
 .like-btn a:hover .far,
 .like-btn a:focus .far {

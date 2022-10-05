@@ -276,6 +276,10 @@ a.button {
     transform: scale(102%);
     box-shadow: $accent;
   }
+
+  &:active {
+    transform: scale(100%);
+  }
 }
 
 .r-card_content {
@@ -379,8 +383,11 @@ a.button {
     line-height: 32px;
   }
 
-  a:focus .fas {
+  a:focus .fas,
+  a:visited .fas {
     opacity: 1;
+    font-size: 30px;
+    outline-color: 1px solid #fff;
   }
 
   a:hover .far,
