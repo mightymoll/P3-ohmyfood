@@ -493,6 +493,10 @@ a.button:hover {
   transition-delay: 0.1s;
   transition: all 0.5s ease-in-out;
 }
+.like-btn a:focus,
+.like-btn a:visited {
+  transform: scale(1);
+}
 .like-btn a:hover .fas {
   opacity: 1;
   font-size: 32px;
