@@ -910,7 +910,7 @@ footer ul.footer-list a:active {
     gap: 30px;
   }
   #restaurants .r-card {
-    flex: 1 1 48%;
+    flex: 1 1 47%;
     max-width: 48.5%;
     margin: 0;
   }
